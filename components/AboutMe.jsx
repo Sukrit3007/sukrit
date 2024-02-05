@@ -26,7 +26,7 @@ const AboutMe = () => {
   return (
     <div>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-                {displayText} 🙏🏻 I'm <Link href='https://github.com/Sukrit3007' className='underline'>Sukrit</Link>, a passionate 
+                {displayText} 🙏🏻 I&apos;m <Link href='https://github.com/Sukrit3007' className='underline'>Sukrit</Link>, a passionate 
                 full-stack developer with a love for crafting clean and efficient code. With a solid foundation in 
                 <Button variant="link"><Link href='https://react.dev/'>React</Link></Button>, 
                 <Button variant="link"><Link href='https://nextjs.org/'>Next.js</Link></Button>, 
