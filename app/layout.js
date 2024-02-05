@@ -1,20 +1,23 @@
-import { Inter } from "next/font/google";
+import {Plus_Jakarta_Sans} from 'next/font/google'
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  weight: ['300'],
+ });
 
 export const metadata = {
   title: "sukrit",
-  description: "🙏🏻namaste. this is sukrit portfolio website.",
+  description: "🙏🏻namaste. this is sukrit portfolio",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -29,3 +32,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

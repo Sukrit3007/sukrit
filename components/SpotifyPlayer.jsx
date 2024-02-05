@@ -39,7 +39,7 @@ const SpotifyPlayer = () => {
       {recentlyPlayed && recentlyPlayed.track && recentlyPlayed.track.album && (
         <div className='flex flex-row gap-6'>
                 <Image
-                  src={recentlyPlayed.track.album.images[0].url} // Assuming the first image is the album art
+                  src={recentlyPlayed.track.album.images[0].url} 
                   width={50}
                   height={50}
                   alt="Album Art"
