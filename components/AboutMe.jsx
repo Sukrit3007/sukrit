@@ -47,9 +47,9 @@ const AboutMe = () => {
             <p className="leading-7 [&:not(:first-child)]:mt-6">
                 I am not just a coder; I am a problem solver. I am constantly seeking ways to improve and optimize, 
                 embracing challenges as opportunities to grow. My approach involves not only understanding the technical 
-                intricacies but also aligning with the user's needs to deliver a product that stands out.<br/><br/>
+                intricacies but also aligning with the user&apos;s needs to deliver a product that stands out.<br/><br/>
                 When I&apos;m not immersed in code, you can find me exploring new technologies, staying updated on industry trends, 
-                and pushing the boundaries of what&apos;s possible in the digital space.Let's collaborate and turn your ideas into reality! Feel free to 
+                and pushing the boundaries of what&apos;s possible in the digital space.Let&apos;s collaborate and turn your ideas into reality! Feel free to 
                 <span><Link href='www.linkedin.com/in/sukrit37' className='text-blue-400'> get in touch </Link></span>
                 if you have a project in mind 
                 or just want to connect.<br/><br/>
