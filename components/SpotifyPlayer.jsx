@@ -45,8 +45,8 @@ const SpotifyPlayer = () => {
                   alt="Album Art"
                   className='min-w-fit'
                 />
-                <div className='flex flex-col gap-2'>
-                <small className="text-sm font-medium leading-none">{recentlyPlayed.track.name}</small>
+                <div className='flex flex-col min-w-fit gap-2 '>
+                  <small className="text-sm font-medium leading-none">{recentlyPlayed.track.name}</small>
                   <p className="text-sm text-muted-foreground">{recentlyPlayed.track.artists.map(artist => artist.name).join(', ')}</p>
                 </div>
         </div>                        
