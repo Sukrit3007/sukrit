@@ -10,8 +10,7 @@ const WorkCard = () => {
 
   const fetchWork = async () => {
     try {
-      const response = await axios.get('/api/work');
-      console.log('API Response:', response.data); 
+      const response = await axios.get('/api/work'); 
       setWorkData(response.data);
     } catch (error) {
       console.log(error);
