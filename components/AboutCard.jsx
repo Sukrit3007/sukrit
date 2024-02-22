@@ -1,22 +1,29 @@
-import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Button} from "@nextui-org/react";
+import React from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
+import { Button } from './ui/button'
+  
 
 const AboutCard = () => {
   return (
-    <Card className="max-w-[400px]">
-      <CardHeader className="flex gap-3">
-          <p className="text-small text-default-500">nextui.org</p>
-      </CardHeader>
-      <CardBody>
-        <p>Make beautiful websites regardless of your design experience. <br/>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, fugiat impedit? Accusamus architecto eaque odit, reiciendis necessitatibus maxime dicta temporibus nesciunt atque recusandae inventore delectus illum earum, dolorem sed accusantium.
+    <Card>
+    <CardHeader>
+        <CardDescription>about</CardDescription>
+    </CardHeader>
+    <CardContent>
+        <p>a passionate full-stack developer with a love for crafting clean and efficient code. With a solid foundation in React, Next.js, MongoDB, Node.js 
+            <br/><br/> thrive in creating dynamic and responsive web applications that not only meet but exceed expectations.
         </p>
-      </CardBody>
-      <CardFooter>
-        <Button radius="full"> 
-            Open
-        </Button>
-      </CardFooter>
+    </CardContent>
+    <CardFooter>
+        <Button>Open to Work</Button>
+    </CardFooter>
     </Card>
   )
 }

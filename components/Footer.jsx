@@ -1,18 +1,16 @@
-import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Button} from "@nextui-org/react";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-
+import React from 'react'
+import ModeToggle from './ModeToggle'
 
 const Footer = () => {
   return (
-    <Card className="max-w-[400px] ">
-      <CardBody>
-        <div className="flex flex-row justify-between items-center">
-          <ThemeSwitcher/>
-          <p>2024 © built by <span className="font-semibold"><Link href=""> sukrit.</Link></span></p>
-        </div>
-      </CardBody>    
-    </Card>
+    <div className='flex flex-row gap-6 justify-center items-center min-w-screen'>
+      <div> 
+        <ModeToggle/>
+      </div>
+      <div>
+        Build by Sukrit
+      </div>
+    </div>
   )
 }
 

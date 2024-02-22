@@ -1,24 +1,16 @@
+import MainCard from "@/components/MainCard";
+import ModeToggle from "@/components/ModeToggle";
+import WorkCard from "@/components/WorkCard";
 import Image from "next/image";
-import { ThemeSwitcher } from "../components/ThemeSwitcher";
-import WorkCards from "@/components/WorkCards";
-import MainCards from "@/components/MainCards";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen max-h-screen flex-col items-center justify-between p-24">
-      
-      <div className="flex flex-row gap-4 flex-wrap-reverse">
-        <WorkCards/>
-        
-        <div>
-          <MainCards/>
-          <div>
-            <Footer/>
-          </div>
+    <main className="flex min-h-screen flex-col items-center justify-between px-4 md:px-24">
+  
+        <div className="flex flex-row flex-wrap-reverse h-full m-2 md:m-12 ">
+            <WorkCard/>
+            <MainCard />
         </div>
-    
-      </div>
 
     </main>
   );
