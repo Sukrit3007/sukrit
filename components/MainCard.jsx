@@ -1,13 +1,14 @@
 import React from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
 import AboutCard from './AboutCard'
+import TechStack from './TechStack'
 
 
 const MainCard = () => {
   return (
-    <ScrollArea className="h-[100%] md:h-[800px] w-full md:w-[40%] rounded-md border p-4 border-red-400">
+    <ScrollArea className="h-[100%] md:h-[820px] w-full md:w-[40%] rounded-md p-4">
         <AboutCard/>
-        <AboutCard/>
+        <TechStack/>
         <AboutCard/>
         <AboutCard/>
         <AboutCard/>
