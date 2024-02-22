@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import {
     Card,
@@ -8,7 +9,9 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 import { Button } from './ui/button'
-  
+import Link from 'next/link'
+import GreenDot from '../public/open-to-work.png'
+import Image from 'next/image'
 
 const AboutCard = () => {
   return (
@@ -23,7 +26,17 @@ const AboutCard = () => {
           </p>
       </CardContent>
       <CardFooter>
-          <Button>Open to Work</Button>
+          <Button className='flex flex-row gap-2'>
+          <Image
+                    src={GreenDot}
+                    alt="Picture of the author"
+                    width={10}
+                    height={10}
+                    />
+            <Link href="https://www.linkedin.com/in/sukrit37/" target="_blank"> 
+            Open to Work
+            </Link>
+          </Button>
       </CardFooter>
       </Card>
     </div>
