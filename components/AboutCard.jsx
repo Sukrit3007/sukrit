@@ -1,45 +1,29 @@
-'use client'
-import React from 'react'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-import { Button } from './ui/button'
-import Link from 'next/link'
-import GreenDot from '../public/open-to-work.png'
-import Image from 'next/image'
+import React from "react";
+import {Card, CardHeader, CardBody, CardFooter,Button} from "@nextui-org/react";
 
 const AboutCard = () => {
   return (
-    <div className='mb-4'>
-        <Card>
-      <CardHeader>
-          <CardDescription>about</CardDescription>
+    <Card className="max-w-[400px] bg-inherit">
+      <CardHeader className="flex gap-3">
+        <div className="flex flex-col">
+          <p className="text-small text-default-500">about</p>
+        </div>
       </CardHeader>
-      <CardContent>
-          <p>a passionate full-stack developer with a love for crafting clean and efficient code. With a solid foundation in React, Next.js, MongoDB, Node.js 
-              <br/><br/> thrive in creating dynamic and responsive web applications that not only meet but exceed expectations.
-          </p>
-      </CardContent>
-      <CardFooter>
-          <Button className='flex flex-row gap-2'>
-          <Image
-                    src={GreenDot}
-                    alt="Picture of the author"
-                    width={10}
-                    height={10}
-                    />
-            <Link href="https://www.linkedin.com/in/sukrit37/" target="_blank"> 
-            Open to Work
-            </Link>
-          </Button>
-      </CardFooter>
-      </Card>
-    </div>
+
+      <CardBody>
+        <p>a passionate full-stack developer with a love for crafting clean and efficient code. With a solid foundation in React, Next.js, MongoDB, Node.js 
+          <br/><br/>thrive in creating dynamic and responsive web applications that not only meet but exceed expectations.
+        </p>
+      </CardBody>
+    <CardFooter>
+      
+      <Button radius="full" className="font-semibold px-5">
+        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-md"></div>
+        <a href="https://www.linkedin.com/in/sukrit37/" target="_blank">Open to work </a>
+      </Button>
+    </CardFooter>
+      
+    </Card>
   )
 }
 
