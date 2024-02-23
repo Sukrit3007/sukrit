@@ -10,22 +10,22 @@ import r4 from '../public/Rectangle4.png'
 const WorkCard = () => {
     const list = [
         {
-          title: "Orange",
+          title: "Authentication app",
           img: r1,
           price: "$5.50",
         },
         {
-          title: "Tangerine",
+          title: "Blogging web-app",
           img: r2,
           price: "$3.00",
         },
         {
-          title: "Raspberry",
+          title: "Landing page website",
           img: r3,
           price: "$10.00",
         },
         {
-          title: "Lemon",
+          title: "E-commerce website",
           img: r4,
           price: "$5.30",
         },
@@ -35,7 +35,7 @@ const WorkCard = () => {
       {list.map((item, index) => (
         <Card isFooterBlurred shadow="sm" key={index} >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <h4 className="text-inherit font-medium text-xl">{item.title}</h4>
+          <h4 className="text-inherit font-semibold text-2xl">{item.title}</h4>
         </CardHeader>
         <Image
           alt="Relaxing app background"
@@ -44,7 +44,7 @@ const WorkCard = () => {
         />
         <CardFooter className="absolute bottom-0 z-10 justify-end ">
           <Button radius="full" size="sm" 
-          className="bg-black bg-opacity-25 backdrop-blur-12"
+          className="bg-black bg-opacity-25 backdrop-blur-12 font-semibold text-base"
           endContent={<ArrowTopRightIcon/>}><a href={item.price} target='_blank'>view project</a></Button>
         </CardFooter>
       </Card>
