@@ -22,7 +22,7 @@ const ThemeSwitcher = () => {
       <Switch
       defaultSelected
       size="lg"
-      color="success"
+      color="default"
       startContent={<SunIcon />}
       endContent={<MoonIcon />}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

@@ -44,7 +44,7 @@ const WorkCard = () => {
         />
         <CardFooter className="absolute bottom-0 z-10 justify-end ">
           <Button radius="full" size="sm" 
-          className="bg-black bg-opacity-25 backdrop-blur-12 font-semibold text-base"
+          className="bg-black bg-opacity-25 backdrop-blur-12 font-semibold text-lg"
           endContent={<ArrowTopRightIcon/>}><a href={item.price} target='_blank'>view project</a></Button>
         </CardFooter>
       </Card>

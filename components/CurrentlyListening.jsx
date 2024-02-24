@@ -5,16 +5,9 @@ const CurrentlyListening = () => {
   return (
     <Card className="max-w-[400px] bg-inherit">
       <CardHeader className="flex gap-3">
-        <Image
-          alt="nextui logo"
-          height={40}
-          radius="sm"
-          src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-          width={40}
-        />
+        
         <div className="flex flex-col">
-          <p className="text-md">NextUI</p>
-          <p className="text-small text-default-500">nextui.org</p>
+          <p className="text-small text-default-500">currently-listening</p>
         </div>
       </CardHeader>
       <Divider/>

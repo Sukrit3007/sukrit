@@ -2,6 +2,14 @@ import React from "react";
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
 
 const TectStack = () => {
+    const icons =[
+        {icon:"", link:"" },
+        {icon:"", link:"" },
+        {icon:"", link:"" },
+        {icon:"", link:"" },
+        {icon:"", link:"" },
+        
+    ]
   return (
     <Card className="max-w-[400px] bg-inherit">
       <CardHeader className="flex gap-3">
@@ -10,7 +18,13 @@ const TectStack = () => {
         </div>
       </CardHeader>
       <CardBody>
-        <p>Make beautiful websites regardless of your design experience.</p>
+        <div>
+            {icons.map((item,index)=>(
+                <div>
+                    
+                </div>
+            ))}
+        </div>
       </CardBody>
     </Card>
   )
