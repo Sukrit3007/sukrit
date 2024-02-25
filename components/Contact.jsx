@@ -15,7 +15,7 @@ const Contact = () => {
     <Card className="w-full mb-4 bg-inherit border-0">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
-          <p className="text-small text-default-500">contact</p>
+          <p className="text-sm text-default-500">contact</p>
         </div>
       </CardHeader>
       <CardContent>

@@ -36,7 +36,9 @@ const WorkCard = () => {
   return (
     <div className="gap-2 grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 w-full h-full">
       {list.map((item, index) => (
+        
        <Card key={index} className="relative w-[full] h-[full] rounded-lg ">
+
         <Image
           alt={item.title}
           className="w-full h-full object-cover"
@@ -50,6 +52,7 @@ const WorkCard = () => {
          view project <ArrowTopRightIcon className="ml-2" />
        </Button>
       </Card>
+
       ))}
     </div>
   )

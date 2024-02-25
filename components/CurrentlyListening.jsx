@@ -15,7 +15,7 @@ const CurrentlyListening = () => {
     <CardHeader className="flex gap-3">
       
       <div className="flex flex-col">
-        <p className="text-small text-default-500">currently-listening</p>
+        <p className="text-sm text-default-500">currently-listening</p>
       </div>
     </CardHeader>
     <CardContent>

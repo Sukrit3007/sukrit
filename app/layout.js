@@ -14,7 +14,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-          <ThemeProvider
+        <div className="dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]">
+        <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
             <Navbar/>
             {children}
           </ThemeProvider>
+        </div>
       </body>
     </html>
   );
