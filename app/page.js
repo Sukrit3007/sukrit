@@ -5,9 +5,9 @@ import WorkCard from "@/components/WorkCard";
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col items-center justify-between p-6 md:px-24 ">
-            <div className="grid gap-8 lg:grid-cols-6 lg:grid-rows-10 w-[80%] h-[800px] ">
-                <div className="lg:col-span-4 lg:row-span-10 order-2 lg:order-none">
+    <main className="flex flex-col items-center justify-between p-6 md:px-24 ">
+            <div className="grid gap-8 lg:grid-cols-6 lg:grid-rows-10 w-[100%] lg:w-[80%] h-[800px] ">
+                <div className="lg:col-span-4 lg:row-span-10 order-2 lg:order-none ">
                     <WorkCard/>
                 </div>
                 <div className="lg:col-span-2 lg:row-span-9 order-1 lg:order-none">
