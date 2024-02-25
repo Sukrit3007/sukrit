@@ -1,22 +1,22 @@
-import React from 'react'
+import React from 'react';
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"  
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const TechStack = () => {
-    const icons =[
-        {icon:"", link:"" },
-        {icon:"", link:"" },
-        {icon:"", link:"" },
-        {icon:"", link:"" },
-        {icon:"", link:"" },
-        
-    ]
+  const icons = [
+    { id: 1, icon: "", link: "" },
+    { id: 2, icon: "", link: "" },
+    { id: 3, icon: "", link: "" },
+    { id: 4, icon: "", link: "" },
+    { id: 5, icon: "", link: "" },
+  ];
+
   return (
     <Card className="w-full mb-4 bg-inherit border-0">
       <CardHeader className="flex gap-3">
@@ -26,15 +26,15 @@ const TechStack = () => {
       </CardHeader>
       <CardContent>
         <div>
-            {icons.map((item,index)=>(
-                <div>
-                    
-                </div>
-            ))}
+          {icons.map((item) => (
+            <div key={item.id}>
+              {/* Render your icon here */}
+            </div>
+          ))}
         </div>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default TechStack
+export default TechStack;
