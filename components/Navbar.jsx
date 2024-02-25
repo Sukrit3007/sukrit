@@ -12,8 +12,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-inherit sticky z-10 top-0 py-4 px-6 md:px-[82px]">
-      <div className="mx-auto px-4 flex justify-between items-center">
+    <nav className="bg-inherit sticky z-10 top-0 py-4 px-6 flex justify-center items-center md:px-[82px]">
+      <div className="w-[80%]">
+      <div className="mx-auto px-4 flex justify-between items-center ">
         <Link href="/">
           <Image src={logo} alt="Picture of the author" width={150} height={50} />
         </Link>
@@ -60,6 +61,7 @@ const Navbar = () => {
             contact
           </Link>
         </div>
+      </div>
       </div>
     </nav>
   );
