@@ -1,5 +1,8 @@
-import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Button} from "@nextui-org/react";
+import React from 'react'
+import {
+    Card,
+  } from "@/components/ui/card"  
+import { Button } from "@/components/ui/button"
 import { ArrowTopRightIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
 import r1 from '../public/Rectangle1.png'
@@ -31,22 +34,21 @@ const WorkCard = () => {
         },
       ];
   return (
-    <div className="gap-2 grid grid-cols-1 sm:grid-cols-2  w-[100%] h-[100%]">
+    <div className="gap-2 grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 w-full h-full">
       {list.map((item, index) => (
-        <Card isFooterBlurred shadow="sm" key={index} >
-        <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <h4 className="text-inherit font-semibold text-2xl">{item.title}</h4>
-        </CardHeader>
+       <Card key={index} className="relative w-[full] h-[full] rounded-lg ">
         <Image
-          alt="Relaxing app background"
-          className="z-0 w-full h-full object-cover"
+          alt={item.title}
+          className="w-full h-full object-cover"
+          height="350"
           src={item.img}
-        />
-        <CardFooter className="absolute bottom-0 z-10 justify-end ">
-          <Button radius="full" size="sm" 
-          className="bg-black bg-opacity-25 backdrop-blur-12 font-semibold text-lg"
-          endContent={<ArrowTopRightIcon/>}><a href={item.price} target='_blank'>view project</a></Button>
-        </CardFooter>
+          style={{ aspectRatio: "350/350" }}
+          width="350" />
+       <div className="absolute inset-0 bg-black bg-opacity-40" />
+       <h2 className="absolute top-4 left-4 text-white font-bold text-2xl">{item.title}</h2>
+       <Button className="absolute bottom-4 right-4 bg-white text-black">
+         view project <ArrowTopRightIcon className="ml-2" />
+       </Button>
       </Card>
       ))}
     </div>

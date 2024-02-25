@@ -1,7 +1,14 @@
-import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
+import React from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"  
 
-const TectStack = () => {
+const TechStack = () => {
     const icons =[
         {icon:"", link:"" },
         {icon:"", link:"" },
@@ -11,13 +18,13 @@ const TectStack = () => {
         
     ]
   return (
-    <Card className="max-w-[400px] bg-inherit">
+    <Card className="w-full mb-4 bg-inherit border-0">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
           <p className="text-small text-default-500">tech-stack</p>
         </div>
       </CardHeader>
-      <CardBody>
+      <CardContent>
         <div>
             {icons.map((item,index)=>(
                 <div>
@@ -25,9 +32,9 @@ const TectStack = () => {
                 </div>
             ))}
         </div>
-      </CardBody>
+      </CardContent>
     </Card>
   )
 }
 
-export default TectStack
+export default TechStack

@@ -1,22 +1,30 @@
-import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Button, Image} from "@nextui-org/react";
+import React from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"  
+import { Button } from "@/components/ui/button"
 import { ArrowTopRightIcon } from '@radix-ui/react-icons'
 
 const Contact = () => {
   return (
-    <Card className="max-w-[400px] bg-inherit">
+    <Card className="w-full mb-4 bg-inherit border-0">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
           <p className="text-small text-default-500">contact</p>
         </div>
       </CardHeader>
-      <CardBody>
+      <CardContent>
         <div className="flex flex-row gap-4 flex-wrap">
-          <Button radius="full" endContent={<ArrowTopRightIcon/>} className="font-semibold"><a href="mailto:sukrit37@gmail.com" target="_blank">email</a></Button>
-          <Button radius="full" endContent={<ArrowTopRightIcon/>} className="font-semibold"><a href="https://github.com/Sukrit3007" target="_blank">linkedin</a></Button>
-          <Button radius="full" endContent={<ArrowTopRightIcon/>} className="font-semibold"><a href="https://www.linkedin.com/in/sukrit37/" target="_blank">github</a></Button>
+          <Button><a href="mailto:sukrit37@gmail.com" className="flex flex-row gap-2 item-center font-semibold" target="_blank">email <ArrowTopRightIcon/></a></Button>
+          <Button><a href="https://github.com/Sukrit3007" className="flex flex-row gap-2 items-center font-semibold" target="_blank">linkedin <ArrowTopRightIcon/></a></Button>
+          <Button><a href="https://www.linkedin.com/in/sukrit37/" className="flex flex-row gap-2 items-center font-semibold" target="_blank">github <ArrowTopRightIcon/></a></Button>
         </div>
-      </CardBody>
+      </CardContent>
     </Card>
   )
 }

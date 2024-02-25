@@ -1,21 +1,21 @@
-import React from "react";
-import {ScrollShadow} from "@nextui-org/react";
-import AboutCard from "./AboutCard";
-import TectStack from "./TectStack";
-import Location from "./Location";
-import Contact from "./Contact";
-import CurrentlyListening from "./CurrentlyListening";
+import React from 'react'
+import { ScrollArea } from "@/components/ui/scroll-area"
+import AboutCard from './AboutCard'
+import TechStack from './TechStack'
+import Contact from './Contact'
+import CurrentlyListening from './CurrentlyListening'
+import Location from './Location'
 
 const MainCard = () => {
   return (
     <div className="w-[100%] ">
-        <ScrollShadow hideScrollBar className="w-full h-[800px]">
+        <ScrollArea className="w-full h-full sm:h-full 2xl:h-[1000px]">
             <AboutCard/>
-            <TectStack/>
+            <TechStack/>
             <Location/>
             <Contact/>
             <CurrentlyListening/>
-        </ScrollShadow>
+        </ScrollArea>
     </div>
   )
 }
