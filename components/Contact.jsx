@@ -20,7 +20,7 @@ const Contact = () => {
       </CardHeader>
       <CardContent>
         <div className="flex flex-row gap-4 flex-wrap">
-          <Button><a href="mailto:sukrit37@gmail.com" className="flex flex-row gap-2 item-center font-semibold" target="_blank">email <ArrowTopRightIcon/></a></Button>
+          <Button><a href="mailto:sukrit37@gmail.com" className="flex flex-row gap-2 items-center font-semibold" target="_blank">email <ArrowTopRightIcon/></a></Button>
           <Button><a href="https://github.com/Sukrit3007" className="flex flex-row gap-2 items-center font-semibold" target="_blank">linkedin <ArrowTopRightIcon/></a></Button>
           <Button><a href="https://www.linkedin.com/in/sukrit37/" className="flex flex-row gap-2 items-center font-semibold" target="_blank">github <ArrowTopRightIcon/></a></Button>
         </div>

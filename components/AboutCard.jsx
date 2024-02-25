@@ -25,7 +25,7 @@ const AboutCard = () => {
       </CardContent>
     <CardFooter>
       
-      <Button className="font-semibold px-5">
+      <Button className="flex flex-row gap-2 items-center font-semibold px-5">
         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-md"></div>
         <a href="https://www.linkedin.com/in/sukrit37/" target="_blank"> Open to work </a>
       </Button>
