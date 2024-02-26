@@ -4,16 +4,15 @@ import {
     CardContent,
     CardFooter,
     CardHeader,
+    CardTitle,
   } from "@/components/ui/card"  
 import { Button } from "@/components/ui/button"
 
 const AboutCard = () => {
   return (
-    <Card className="w-full mb-4 bg-inherit border-0">
+    <Card className="w-full bg-inherit border-0">
       <CardHeader className="flex gap-3">
-        <div className="flex flex-col">
-          <p className="text-sm text-default-500">about</p>
-        </div>
+        <CardTitle>about</CardTitle>
       </CardHeader>
 
       <CardContent>
@@ -23,9 +22,9 @@ const AboutCard = () => {
       </CardContent>
     <CardFooter>
       
-    <Button className="flex flex-row gap-2 items-center font-semibold px-5">
+    <Button className="flex flex-row gap-2 items-center font-semibold px-5 rounded-full shadow-md" style={{backgroundColor: '#1B1B1B'}}>
       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-md"></div>
-      <a href="https://www.linkedin.com/in/sukrit37/" target="_blank"> Open to work </a>
+      <a href="https://www.linkedin.com/in/sukrit37/" target="_blank" className="text-white">Open to work</a>
     </Button>
     </CardFooter>
       

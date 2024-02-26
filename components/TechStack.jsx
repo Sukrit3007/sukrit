@@ -40,14 +40,12 @@ const TechStack = () => {
   ];
 
   return (
-    <Card className="w-full mb-4 bg-inherit border-0">
+    <Card className="w-full mb-4 bg-inherit">
       <CardHeader className="flex gap-3">
-        <div className="flex flex-col">
-          <p className="text-sm text-default-500">tech-stack</p>
-        </div>
+        <CardTitle>tech-stack</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-row flex-wrap items-center gap-4">
+        <div className="flex flex-row flex-wrap items-center gap-5">
           {icons.map((item) => (
             <div key={item.id}>     
               <Image src={item.icon} alt="icon" width={40} height={40} />

@@ -32,9 +32,7 @@ const Location = () => {
   return (
     <Card className="w-full mb-4 bg-inherit border-0">
       <CardHeader className="flex gap-3">
-        <div className="flex flex-col">
-          <p className="text-sm text-default-500">location</p>
-        </div>
+        <CardTitle>location</CardTitle>
       </CardHeader>
       <CardContent>
         <LoadScript googleMapsApiKey="AIzaSyCnIT342iea9yoObPzyGk0LSVGxUaE-UQs" >

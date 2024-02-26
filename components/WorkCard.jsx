@@ -34,24 +34,22 @@ const WorkCard = () => {
         },
       ];
   return (
-    <div className="gap-2 grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 w-full h-full ">
+    <div className="gap-2 grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 w-full h-full rounded-2xl">
       {list.map((item, index) => (
         
-       <Card key={index} className="relative w-[full] h-[full]">
-
+        <div key={index} className="relative shadow-md rounded-lg group hover:scale-95 transition-transform duration-300">
         <Image
-          alt={item.title}
-          className="w-full h-full object-cover"
-          height="350"
           src={item.img}
-          style={{ aspectRatio: "350/350" }}
-          width="350" />
-       <div className="absolute inset-0 bg-black bg-opacity-40" />
-       <h2 className="absolute top-4 left-4 text-white font-bold text-2xl">{item.title}</h2>
-       <Button className="absolute bottom-4 right-4 bg-white text-black">
-         view project <ArrowTopRightIcon className="ml-2" />
-       </Button>
-      </Card>
+          alt={item.title}
+          className="w-full h-full object-cover rounded-t-lg"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 rounded-2xl">
+        <h2 className="absolute top-4 left-4 text-white font-bold text-2xl">{item.title}</h2>
+          <Button className="absolute bottom-4 right-4 bg-black bg-opacity-25 text-white py-2 px-4 rounded-full shadow-md backdrop-filter backdrop-blur-lg" style={{ borderRadius: "56px", padding: "10px 24px", justifyContent: "center", alignItems: "center", gap: "8px" }}>
+            view project <ArrowTopRightIcon className="ml-2" />
+          </Button>
+        </div>
+      </div>
 
       ))}
     </div>

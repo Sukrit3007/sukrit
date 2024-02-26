@@ -13,10 +13,7 @@ const CurrentlyListening = () => {
   return (
     <Card className="w-full bg-inherit border-0">
     <CardHeader className="flex gap-3">
-      
-      <div className="flex flex-col">
-        <p className="text-sm text-default-500">currently-listening</p>
-      </div>
+     <CardTitle>currently listening:</CardTitle>
     </CardHeader>
     <CardContent>
       <p>Make beautiful websites regardless of your design experience.</p>
