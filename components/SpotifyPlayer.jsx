@@ -1,50 +1,17 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Button } from "@/components/ui/button";
+
+import React from 'react';
 
 const SpotifyPlayer = () => {
-    const clientId = process.env.SPOTIFY_KEY; // Replace with your client ID
-    const code = undefined;
-
-    async function spotify() {
-        if (!code) {
-            redirectToAuthCodeFlow(clientId);
-        } else {
-            const accessToken = await getAccessToken(clientId, code);
-            const profile = await fetchProfile(accessToken);
-            populateUI(profile);
-        }
-    }
-    async function redirectToAuthCodeFlow(clientId) {
-        // TODO: Redirect to Spotify authorization page
-    }
-    
-    async function getAccessToken(clientId, code) {
-      // TODO: Get access token for code
-    }
-    
-    async function fetchProfile(token) {
-        // TODO: Call Web API
-    }
-    
-    function populateUI(profile) {
-        // TODO: Update UI with profile data
-    }
-
-    useEffect(() => {
-      spotify();
-    
-      return () => {
-        
-      }
-    }, [])
-    
-
     return (
-        <div>
-
-        </div>
+        <div className="relative w-full h-[352px]">
+                   <iframe
+                    className="absolute inset-0 w-full h-full rounded-xl"
+                    src="https://open.spotify.com/embed/album/18NOKLkZETa4sWwLMIm0UZ?view=coverart"
+                    style={{ border: '0' }}
+                    allowFullScreen
+                    allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture;">
+                </iframe>
+            </div>
     );
 };
 
