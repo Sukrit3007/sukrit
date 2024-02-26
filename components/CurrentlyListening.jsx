@@ -2,12 +2,11 @@ import React from 'react'
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"  
-import { Button } from "@/components/ui/button"
+import SpotifyPlayer from './SpotifyPlayer'
 
 const CurrentlyListening = () => {
   return (
@@ -16,7 +15,7 @@ const CurrentlyListening = () => {
      <CardTitle>currently listening:</CardTitle>
     </CardHeader>
     <CardContent>
-      <p>Make beautiful websites regardless of your design experience.</p>
+      <SpotifyPlayer/>
     </CardContent>
     <CardFooter>
     
