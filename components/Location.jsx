@@ -15,7 +15,7 @@ const Location = () => {
       <CardHeader >
         <CardTitle>location</CardTitle>
       </CardHeader>
-      <CardContent className="relative overflow-hidden">
+      <CardContent className="relative overflow-hidden rounded-2xl">
         <div className="group">
           <Image
             src={map}
