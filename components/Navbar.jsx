@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import sukritdark from '../public/sukritdark.svg';
-import sukritlight from '../public/sukritlight.svg';
 import { useTheme } from "next-themes"
 
 const Navbar = () => {
