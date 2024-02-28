@@ -50,19 +50,19 @@ import lexpress from '../public/LogosLight/express.svg';
 const TechStack = () => {
   const { setTheme, theme } = useTheme()
   const icons = [
-    { id: 1, icon: theme === 'dark' ? html : lhtml, name: 'HTML', description: 'HyperText Markup Language' },
-    { id: 2, icon: theme === 'dark' ? css : lcss, name: 'CSS', description: 'Cascading Style Sheets' },
-    { id: 3, icon: theme === 'dark' ? javascript : ljavascript, name: 'JavaScript', description: 'The programming language of the web' },
-    { id: 4, icon: theme === 'dark' ? typescript : ltypescript, name: 'TypeScript', description: 'A statically typed superset of JavaScript' },
-    { id: 5, icon: theme === 'dark' ? react : lreact, name: 'React', description: 'A JavaScript library for building user interfaces' },
-    { id: 6, icon: theme === 'dark' ? appwrite : lappwrite, name: 'Appwrite', description: 'An open-source backend server' },
-    { id: 7, icon: theme === 'dark' ? php : lphp, name: 'PHP', description: 'A server-side scripting language' },
-    { id: 8, icon: theme === 'dark' ? tailwindcss : ltailwindcss, name: 'Tailwind CSS', description: 'A utility-first CSS framework' },
-    { id: 9, icon: theme === 'dark' ? git : lgit, name: 'Git', description: 'A distributed version control system' },
-    { id: 10, icon: theme === 'dark' ? mongodb : lmongodb, name: 'MongoDB', description: 'A source-available cross-platform document-oriented database program' },
-    { id: 11, icon: theme === 'dark' ? git : lgit, name: 'SQL', description: 'A standard language for managing and manipulating databases' },
-    { id: 12, icon: theme === 'dark' ? nodejs : lnodejs, name: 'Node.js', description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine' },
-    { id: 13, icon: theme === 'dark' ? express : lexpress, name: 'Express.js', description: 'A web application framework for Node.js' },
+    { id: 1, icon: html, iconlight: lhtml, name: 'HTML', description: 'HyperText Markup Language' },
+    { id: 2, icon: css ,iconlight:lcss, name: 'CSS', description: 'Cascading Style Sheets' },
+    { id: 3, icon: javascript,iconlight : ljavascript, name: 'JavaScript', description: 'The programming language of the web' },
+    { id: 4, icon: typescript,iconlight : ltypescript, name: 'TypeScript', description: 'A statically typed superset of JavaScript' },
+    { id: 5, icon: react,iconlight : lreact, name: 'React', description: 'A JavaScript library for building user interfaces' },
+    { id: 6, icon: appwrite,iconlight : lappwrite, name: 'Appwrite', description: 'An open-source backend server' },
+    { id: 7, icon: php,iconlight : lphp, name: 'PHP', description: 'A server-side scripting language' },
+    { id: 8, icon: tailwindcss,iconlight : ltailwindcss, name: 'Tailwind CSS', description: 'A utility-first CSS framework' },
+    { id: 9, icon: git,iconlight : lgit, name: 'Git', description: 'A distributed version control system' },
+    { id: 10, icon: mongodb,iconlight : lmongodb, name: 'MongoDB', description: 'A source-available cross-platform document-oriented database program' },
+    { id: 11, icon: git,iconlight : lgit, name: 'SQL', description: 'A standard language for managing and manipulating databases' },
+    { id: 12, icon: nodejs,iconlight : lnodejs, name: 'Node.js', description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine' },
+    { id: 13, icon: express,iconlight : lexpress, name: 'Express.js', description: 'A web application framework for Node.js' },
   ];
 
   
@@ -77,7 +77,14 @@ const TechStack = () => {
           {icons.map((item,index) => (
             <div key={index}>  
             <HoverCard>  
-              <HoverCardTrigger><Image src={item.icon} alt="icon" width={40} height={40} /></HoverCardTrigger>
+              <HoverCardTrigger>
+                <Image 
+                  src={theme === 'light' ? item.iconlight: item.icon} 
+                  alt="icon" 
+                  width={40} 
+                  height={40} 
+                />
+              </HoverCardTrigger>
               <HoverCardContent>
                 {item.name} : {item.description}
               </HoverCardContent>  

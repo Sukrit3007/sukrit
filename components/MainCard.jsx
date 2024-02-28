@@ -8,15 +8,13 @@ import Location from './Location'
 
 const MainCard = () => {
   return (
-    <div className="w-[100%] ">
-        <ScrollArea className="w-full h-full md:h-[700px]">
+        <ScrollArea className="w-full">
             <AboutCard/>
             <TechStack/>
             <Location/>
             <Contact/>
             <CurrentlyListening/>
         </ScrollArea>
-    </div>
   )
 }
 

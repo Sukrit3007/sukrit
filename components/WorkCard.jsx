@@ -22,22 +22,26 @@ const WorkCard = () => {
     const list = [
         {
           title: "Authentication app",
-          img: theme === 'dark' ? dr1 : lr1, // Use dr1 for dark, lr1 for light
+          imgdark:dr1, // Use dr1 for dark, lr1 for light
+          imglight:lr1, // Use dr1 for dark, lr1 for light
           price: "$5.50",
         },
         {
           title: "Blogging web-app",
-          img: theme === 'dark' ? dr2 : lr2, // Use dr2 for dark, lr2 for light
+          imgdark:dr2, // Use dr2 for dark, lr2 for light
+          imglight:lr2, // Use dr2 for dark, lr2 for light
           price: "$3.00",
         },
         {
           title: "Landing page website",
-          img: theme === 'dark' ? dr3 : lr3, // Use dr3 for dark, lr3 for light
+          imgdark:dr3, // Use dr3 for dark, lr3 for light
+          imglight:lr3, // Use dr3 for dark, lr3 for light
           price: "$10.00",
         },
         {
           title: "E-commerce website",
-          img: theme === 'dark' ? dr4 : lr4, // Use dr4 for dark, lr4 for light
+          imgdark:dr4, // Use dr4 for dark, lr4 for light
+          imglight:lr4, // Use dr4 for dark, lr4 for light
           price: "$5.30",
         },
       ];
@@ -47,7 +51,7 @@ const WorkCard = () => {
         
         <div key={index} className="relative shadow-md rounded-lg ">
         <Image
-          src={item.img}
+          src={theme === 'light' ? item.imglight : item.imgdark}
           alt={item.title}
           className="w-full h-full object-cover rounded-t-lg"
         />

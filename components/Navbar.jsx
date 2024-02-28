@@ -17,11 +17,7 @@ const Navbar = () => {
       <div className="w-[100%] lg:w-[80%] ">
       <div className="mx-auto px-4 flex justify-between items-center ">
       <Link href="/">
-        {theme == "light" ? (
-          <Image src="/sukritlight.svg" alt="light logo" width={150} height={50} />
-        ) : (
-          <Image src="/sukritdark.svg" alt="dark logo" width={150} height={50} />
-        )}
+        <Image src={theme === 'light' ? '/sukritlight.svg':'/sukritdark.svg' } alt="light logo" width={150} height={50} />
       </Link>
         <div className="hidden md:flex space-x-8">
           <Link className="hover:text-gray-300" href="#">
