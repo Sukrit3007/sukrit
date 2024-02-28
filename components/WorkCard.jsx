@@ -46,10 +46,10 @@ const WorkCard = () => {
         },
       ];
   return (
-    <div className="gap-4 grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 w-full h-auto rounded-2xl">
+    <div className="gap-4 grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 w-full h-auto rounded-xl">
       {list.map((item, index) => (
         
-        <div key={index} className="relative shadow-md rounded-2xl ">
+        <div key={index} className="relative shadow-md rounded-xl ">
         <Image
           src={theme === 'light' ? item.imglight : item.imgdark}
           alt={item.title}
