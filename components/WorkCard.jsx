@@ -56,7 +56,7 @@ const WorkCard = () => {
           className="w-full h-full object-cover rounded-t-lg"
         />
         <div className="absolute inset-0 bg-black bg-opacity-10 rounded-2xl">
-        <h2 className="absolute top-4 left-4 text-white font-bold text-2xl">{item.title}</h2>
+        <h2 className="absolute top-4 left-4 text-white font-bold scroll-m-20 pb-2 text-3xl tracking-tight first:mt-0">{item.title}</h2>
         <Button className="absolute bottom-4 right-4 bg-black bg-opacity-25 text-white py-2 px-4 rounded-full shadow-md backdrop-filter backdrop-blur-lg hover:bg-black" style={{ borderRadius: "56px", padding: "10px 24px", justifyContent: "center", alignItems: "center", gap: "8px" }}>
           view project <ArrowTopRightIcon className="ml-2" />
       </Button>

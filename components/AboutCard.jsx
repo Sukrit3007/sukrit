@@ -17,7 +17,7 @@ const AboutCard = () => {
       </CardHeader>
 
       <CardContent>
-        <p className="font-light">a passionate <span className="font-semibold">full-stack developer</span> with a love for crafting clean and efficient code. With a solid foundation in React, Next.js, MongoDB, Node.js 
+        <p className="font-light leading-7 [&:not(:first-child)]:mt-6">a passionate <span className="font-semibold">full-stack developer</span> with a love for crafting clean and efficient code. With a solid foundation in React, Next.js, MongoDB, Node.js 
           <br/><br/>thrive in creating dynamic and responsive web applications that not only meet but exceed expectations.
         </p>
       </CardContent>
