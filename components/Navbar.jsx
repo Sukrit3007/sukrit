@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../public/sukrit.svg';
+import sukritdark from '../public/sukritdark.svg';
+import sukritlight from '../public/sukritlight.svg';
+import { useTheme } from "next-themes"
 
 const Navbar = () => {
+  const { setTheme, theme } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,9 +18,13 @@ const Navbar = () => {
     <nav className="bg-transparent sticky z-10 top-0 py-6 px-6 flex justify-center items-center md:px-[82px]">
       <div className="w-[100%] lg:w-[80%] ">
       <div className="mx-auto px-4 flex justify-between items-center ">
-        <Link href="/">
-          <Image src={logo} alt="Picture of the author" width={150} height={50} />
-        </Link>
+      <Link href="/">
+        {theme == "light" ? (
+          <Image src="/sukritlight.svg" alt="light logo" width={150} height={50} />
+        ) : (
+          <Image src="/sukritdark.svg" alt="dark logo" width={150} height={50} />
+        )}
+      </Link>
         <div className="hidden md:flex space-x-8">
           <Link className="hover:text-gray-300" href="#">
             work

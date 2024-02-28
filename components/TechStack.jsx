@@ -48,7 +48,7 @@ const TechStack = () => {
   return (
     <Card className="w-full bg-inherit">
       <CardHeader className="flex gap-3">
-        <CardTitle>tech-stack</CardTitle>
+        <CardDescription>tech-stack</CardDescription>
       </CardHeader>
       <CardContent >
         

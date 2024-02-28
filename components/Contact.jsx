@@ -34,9 +34,8 @@ const Contact = () => {
       <Button
         key={index}
         className="flex flex-row gap-2 items-center font-semibold px-5 rounded-full shadow-md"
-        style={{ backgroundColor: '#1B1B1B' }}
       >
-        <a href={link.url} className="flex flex-row gap-2 items-center text-white" target="_blank">
+        <a href={link.url} className="flex flex-row gap-2 items-center" target="_blank">
           {link.label} {link.icon}
         </a>
       </Button>
@@ -46,7 +45,7 @@ const Contact = () => {
   return (
     <Card className="w-full mb-4 bg-inherit border-0">
       <CardHeader>
-        <CardTitle>contact</CardTitle>
+        <CardDescription>contact</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-row gap-4 flex-wrap">{renderContactLinks()}</div>

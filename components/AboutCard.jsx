@@ -2,6 +2,7 @@ import React from 'react'
 import {
     Card,
     CardContent,
+    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
@@ -12,7 +13,7 @@ const AboutCard = () => {
   return (
     <Card className="w-full bg-inherit border-0">
       <CardHeader className="flex gap-3">
-        <CardTitle>about</CardTitle>
+        <CardDescription>about</CardDescription>
       </CardHeader>
 
       <CardContent>
@@ -22,9 +23,9 @@ const AboutCard = () => {
       </CardContent>
     <CardFooter>
       
-    <Button className="flex flex-row gap-2 items-center font-semibold px-5 rounded-full shadow-md" style={{backgroundColor: '#1B1B1B'}}>
+    <Button className="flex flex-row gap-2 items-center font-semibold px-5 rounded-full shadow-md bg-opacity-50">
       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-md"></div>
-      <a href="https://www.linkedin.com/in/sukrit37/" target="_blank" className="text-white">Open to work</a>
+      <a href="https://www.linkedin.com/in/sukrit37/" target="_blank" className="">Open to work</a>
     </Button>
     </CardFooter>
       
