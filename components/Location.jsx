@@ -8,9 +8,11 @@ import {
   } from "@/components/ui/card"  
 import Image from 'next/image'
 import { useTheme } from "next-themes"
+import dynamic from 'next/dynamic';
 
 const Location = () => {  
   const { setTheme, theme } = useTheme()
+  const DynamicImage = dynamic(() => import('next/image'), { ssr: false });
   return (
     <Card className="w-full bg-inherit">
       <CardHeader >
@@ -18,7 +20,7 @@ const Location = () => {
       </CardHeader>
       <CardContent className="relative overflow-hidden rounded-2xl ">
         <div className="group">
-        <Image
+        <DynamicImage
               src={theme === 'light' ? '/maplight.png' : '/map.png'}
               alt="location"
               width={500}

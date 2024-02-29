@@ -15,6 +15,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 import html from '../public/Logos/html.svg';
 import css from '../public/Logos/css.svg';
@@ -48,7 +49,8 @@ import lexpress from '../public/LogosLight/express.svg';
 
 
 const TechStack = () => {
-  const { setTheme, theme } = useTheme()
+  const { setTheme, theme } = useTheme();
+  const DynamicImage = dynamic(() => import('next/image'), { ssr: false });
   const icons = [
     { id: 1, icon: html, iconlight: lhtml, name: 'HTML', description: 'HyperText Markup Language' },
     { id: 2, icon: css ,iconlight:lcss, name: 'CSS', description: 'Cascading Style Sheets' },
@@ -78,7 +80,7 @@ const TechStack = () => {
             <div key={index}>  
             <HoverCard>  
               <HoverCardTrigger>
-                <Image 
+                <DynamicImage 
                   src={theme === 'light' ? item.iconlight: item.icon} 
                   alt="icon" 
                   width={40} 

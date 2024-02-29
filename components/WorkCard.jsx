@@ -16,9 +16,11 @@ import lr1 from '../public/Rectangle1light.png';
 import lr2 from '../public/Rectangle2light.png';
 import lr3 from '../public/Rectangle3light.png';
 import lr4 from '../public/Rectangle4light.png';
+import dynamic from 'next/dynamic';
 
 const WorkCard = () => {
   const { setTheme, theme } = useTheme();
+  const DynamicImage = dynamic(() => import('next/image'), { ssr: false });
     const list = [
         {
           title: "Authentication app",
@@ -50,7 +52,7 @@ const WorkCard = () => {
       {list.map((item, index) => (
         
         <div key={index} className="relative shadow-md rounded-xl ">
-        <Image
+        <DynamicImage
           src={theme === 'light' ? item.imglight : item.imgdark}
           alt={item.title}
           className="w-full h-full object-cover rounded-t-lg"

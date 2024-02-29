@@ -1,12 +1,14 @@
-"use client"
+'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useTheme } from "next-themes"
+import dynamic from 'next/dynamic';
 
 const Navbar = () => {
   const { setTheme, theme } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const DynamicImage = dynamic(() => import('next/image'), { ssr: false });
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -17,7 +19,12 @@ const Navbar = () => {
       <div className="w-[100%] lg:w-[80%] ">
       <div className="mx-auto px-4 flex justify-between items-center ">
       <Link href="/">
-        <Image src={theme === 'light' ? '/sukritlight.svg':'/sukritdark.svg' } alt="light logo" width={150} height={50} />
+        <DynamicImage
+          src={theme === 'light' ? '/light.svg' : '/dark.svg'}
+          alt="logo"
+          width={150}
+          height={50}
+        />
       </Link>
         <div className="hidden md:flex space-x-8">
           <Link className="hover:text-gray-300" href="/work">
