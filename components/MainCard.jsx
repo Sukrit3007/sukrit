@@ -8,7 +8,7 @@ import Location from './Location'
 
 const MainCard = () => {
   return (
-        <ScrollArea className="w-full h-screen">
+        <ScrollArea className="w-full h-auto">
             <AboutCard/>
             <TechStack/>
             <Location/>

@@ -20,13 +20,13 @@ const Navbar = () => {
         <Image src={theme === 'light' ? '/sukritlight.svg':'/sukritdark.svg' } alt="light logo" width={150} height={50} />
       </Link>
         <div className="hidden md:flex space-x-8">
-          <Link className="hover:text-gray-300" href="#">
+          <Link className="hover:text-gray-300" href="/work">
             work
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link className="hover:text-gray-300" href="/about">
             about
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link className="hover:text-gray-300" href="/contact">
             contact
           </Link>
         </div>
@@ -52,13 +52,13 @@ const Navbar = () => {
       </div>
       <div className={`md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
         <div className="flex flex-col items-end space-y-4">
-          <Link className="hover:text-gray-300" href="#">
+          <Link className="hover:text-gray-300" href="/work">
             work
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link className="hover:text-gray-300" href="/about">
             about
           </Link>
-          <Link className="hover:text-gray-300" href="#">
+          <Link className="hover:text-gray-300" href="/contact">
             contact
           </Link>
         </div>
