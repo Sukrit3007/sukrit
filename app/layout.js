@@ -2,6 +2,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/Navbar";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -21,7 +23,7 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             <Navbar/>
-            {children}
+            <Suspense fallback={<Loading/> }>{children}</Suspense>
           </ThemeProvider>
       </body>
     </html>
