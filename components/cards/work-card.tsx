@@ -24,7 +24,6 @@ import {
 import Image from "next/image";
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-import { CardFooter } from "@material-tailwind/react"
 import { motion } from "framer-motion";
 
 
