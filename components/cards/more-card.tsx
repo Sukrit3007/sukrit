@@ -7,7 +7,7 @@ import {
 
 const MoreCard = () => {
     return (
-        <Card className='h-full bg-green-300'>
+        <Card className='bg-green-300'>
             <CardContent className='pt-6'>
                 <div className='p-4'>
                     <h1 className='text-5xl font-bold font-foreground'>

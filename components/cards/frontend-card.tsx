@@ -8,7 +8,7 @@ import { aboutinfo } from '@/data/about'
 
 const FrontendCard = () => {
     return (
-        <Card className='h-full bg-lime-400'>
+        <Card className='bg-lime-400'>
             <CardContent className='pt-6'>
                 <div className='p-4'>
                     <h1 className='text-4xl font-bold'>
