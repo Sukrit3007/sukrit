@@ -1,8 +1,9 @@
 'use client'
 
 import * as React from "react"
+import Image from "next/image";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils"
 import {
     Card,
     CardContent,
@@ -30,8 +31,6 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import { urlFor } from "@/lib/sanity";
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
 import useMediaQuery from "@custom-react-hooks/use-media-query"
@@ -44,7 +43,21 @@ export default function WorkCard({ work }: { work: any }) {
         return (
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger className="w-full">
-                    <ShowCard work={work} />
+                    <Card className="cursor-pointer bg-indigo-300 ">
+                        <CardHeader className="text-left">
+                            <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
+                            <h1 className="text-sm ">{work.type}</h1>
+                        </CardHeader>
+                        <CardContent className="flex items-center justify-center bg-white rounded-2xl">
+                            <Image
+                                src={urlFor(work.image).url()}
+                                alt={work.name}
+                                width={300}
+                                height={300}
+                                className="object-contain rounded-md aspect-square"
+                            />
+                        </CardContent>
+                    </Card>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[50%] pt-6">
                     <DialogHeader >
@@ -75,7 +88,21 @@ export default function WorkCard({ work }: { work: any }) {
         <div>
             <Drawer>
                 <DrawerTrigger className="w-full">
-                    <ShowCard work={work} />
+                    <Card className="cursor-pointer bg-indigo-300 ">
+                        <CardHeader className="text-left">
+                            <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
+                            <h1 className="text-sm ">{work.type}</h1>
+                        </CardHeader>
+                        <CardContent className="flex items-center justify-center bg-white rounded-2xl">
+                            <Image
+                                src={urlFor(work.image).url()}
+                                alt={work.name}
+                                width={300}
+                                height={300}
+                                className="object-contain rounded-md aspect-square"
+                            />
+                        </CardContent>
+                    </Card>
                 </DrawerTrigger>
                 <DrawerContent>
                     <DrawerHeader>
@@ -105,25 +132,3 @@ export default function WorkCard({ work }: { work: any }) {
 }
 
 
-export function ShowCard({ work }: { work: any }) {
-    return (
-        <Card className="cursor-pointer bg-indigo-300 ">
-            <CardHeader className="text-left">
-                <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
-                <h1 className="text-sm ">{work.type}</h1>
-            </CardHeader>
-            <div>
-                
-            </div>
-            <CardContent className="flex items-center justify-center bg-white rounded-2xl">
-                <Image
-                    src={urlFor(work.image).url()}
-                    alt={work.name}
-                    width={300}
-                    height={300}
-                    className="object-contain rounded-md aspect-square"
-                />
-            </CardContent>
-        </Card>
-    )
-}
