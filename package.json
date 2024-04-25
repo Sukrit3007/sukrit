@@ -19,6 +19,7 @@
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@sanity/cli": "^3.39.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/types": "^3.39.0",
     "axios": "^1.6.8",
