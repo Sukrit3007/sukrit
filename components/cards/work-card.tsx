@@ -39,10 +39,11 @@ export default function WorkCard({ work }: { work: any }) {
     const [open, setOpen] = React.useState(false)
     const isDesktop = useMediaQuery("(min-width: 768px)")
 
+
     if (isDesktop) {
         return (
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogTrigger className="w-full">
+                <DialogTrigger className="w-full" asChild>
                     <Card className="cursor-pointer bg-indigo-300 ">
                         <CardHeader className="text-left">
                             <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
@@ -87,7 +88,7 @@ export default function WorkCard({ work }: { work: any }) {
     return (
         <div>
             <Drawer>
-                <DrawerTrigger className="w-full">
+                <DrawerTrigger className="w-full" asChild>
                     <Card className="cursor-pointer bg-indigo-300 ">
                         <CardHeader className="text-left">
                             <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
