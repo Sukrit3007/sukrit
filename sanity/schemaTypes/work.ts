@@ -34,8 +34,13 @@ export default {
         },
         {
             name : 'description',
-            type : 'string',
+            type : 'array',
             title : 'Description of the work',
+            of : [
+                {
+                    type: 'block',
+                },
+            ]
         },
     ]
 }
