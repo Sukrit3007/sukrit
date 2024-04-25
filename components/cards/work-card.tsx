@@ -2,160 +2,125 @@
 
 import * as React from "react"
 
-import useMediaQuery from "@custom-react-hooks/use-media-query"
-
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 import {
     Dialog,
     DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 import {
     Drawer,
+    DrawerClose,
     DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { ArrowUpRight } from "lucide-react";
+import useMediaQuery from "@custom-react-hooks/use-media-query"
 
-
-export default function WorkCard({ info }: { info: any }) {
+export default function WorkCard({ work }: { work: any }) {
     const [open, setOpen] = React.useState(false)
     const isDesktop = useMediaQuery("(min-width: 768px)")
 
     if (isDesktop) {
         return (
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogTrigger asChild>
-                    <Card className="cursor-pointer bg-indigo-300 ">
-                        <CardHeader>
-                            <CardTitle className="text-4xl font-bold">{info.name}</CardTitle>
-                            <h1 className="text-sm">{info.type}</h1>
-                        </CardHeader>
-                        <CardContent className="flex items-center justify-center bg-white rounded-2xl">
-                                <Image
-                                    src={info.image}
-                                    alt="image"
-                                    width={300}
-                                    height={300}
-                                    className="object-contain rounded-md aspect-square"
-                                />
-                        </CardContent>
-                    </Card>
+                <DialogTrigger className="w-full">
+                    <ShowCard work={work} />
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[50%] pt-6">
-                    <div className="p-4">
-                        <MainCard info={info} />
+                    <DialogHeader >
+                        <DialogTitle>{work.name}</DialogTitle>
+                        <DialogDescription>{work.title}</DialogDescription>
+                    </DialogHeader>
+                    <div className="w-fit flex flex-row gap-2 items-start justify-start border rounded-3xl border-primary ">
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.demolink} target="_blank">view demo <ArrowUpRight className='w-5 h-5' /> </Link></Button>
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.sourcelink} target="_blank">source code <ArrowUpRight className='w-5 h-5' /> </Link></Button>
+                    </div>
+                    <div className="w-full flex items-center justify-center">
+                        <Image
+                            src={urlFor(work.image).url()}
+                            alt={work.name}
+                            width={500}
+                            height={300}
+                            className="object-contain rounded-md aspect-video"
+                        />
+                    </div>
+                    <div className="mt-4 text-left">
+                        {work.description}
                     </div>
                 </DialogContent>
             </Dialog>
         )
     }
-
     return (
-        <Drawer open={open} onOpenChange={setOpen}>
-            <DrawerTrigger asChild>
-                <Card className="cursor-pointer bg-indigo-300">
-                    <CardHeader>
-                        <CardTitle className="text-4xl font-bold">{info.name}</CardTitle>
-                        <h1 className="text-sm">{info.type}</h1>
-                    </CardHeader>
-                    <CardContent className="flex items-center justify-center bg-white rounded-2xl">
+        <div>
+            <Drawer>
+                <DrawerTrigger className="w-full">
+                    <ShowCard work={work} />
+                </DrawerTrigger>
+                <DrawerContent>
+                    <DrawerHeader>
+                        <DrawerTitle>{work.name}</DrawerTitle>
+                        <DrawerDescription>{work.title}</DrawerDescription>
+                    </DrawerHeader>
+                    <div className="w-full flex items-center justify-center">
                         <Image
-                            src={info.image}
-                            alt="image"
+                            src={urlFor(work.image).url()}
+                            alt={work.name}
                             width={300}
                             height={300}
-                            className="object-contain rounded-md aspect-square"
+                            className="object-contain rounded-md aspect-video"
                         />
-                    </CardContent>
-                </Card>
-            </DrawerTrigger>
-            <DrawerContent className="p-6">
-                <div className="pt-6">
-                    <MainCard info={info} />
-                </div>
-            </DrawerContent>
-        </Drawer>
+                    </div>
+                    <div className="w-full flex flex-row gap-6 items-center justify-center mt-4">
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.demolink} target="_blank">view demo <ArrowUpRight className='w-5 h-5' /> </Link></Button>
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.sourcelink} target="_blank">source code <ArrowUpRight className='w-5 h-5' /> </Link></Button>
+                    </div>
+                    <div className="px-6 mt-4 mb-6 text-left">
+                        {work.description}
+                    </div>
+                </DrawerContent>
+            </Drawer>
+        </div>
     )
 }
 
-function MainCard({ info }: { info: any }) {
-    const FADE_UP_ANIMATION_VARIANTS = {
-        hidden: { opacity: 0, y: 10 },
-        show: { opacity: 1, y: 0, transition: { type: "spring" } },
-    };
 
+export function ShowCard({ work }: { work: any }) {
     return (
-        <motion.div
-            className="flex flex-col gap-6"
-            initial="hidden"
-            animate="show"
-            viewport={{ once: true }}
-            variants={{
-                hidden: {},
-                show: {
-                    transition: {
-                        staggerChildren: 0.15,
-                    },
-                },
-            }}
-        >
-            <motion.div
-                variants={FADE_UP_ANIMATION_VARIANTS}
-                className="w-full flex items-center justify-center bg-white rounded-2xl"
-            >
+        <Card className="cursor-pointer bg-indigo-300 ">
+            <CardHeader className="text-left">
+                <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
+                <h1 className="text-sm ">{work.type}</h1>
+            </CardHeader>
+            <CardContent className="flex items-center justify-center bg-white rounded-2xl">
                 <Image
-                    src={info.image}
-                    alt="image"
+                    src={urlFor(work.image).url()}
+                    alt={work.name}
                     width={300}
                     height={300}
-                    className="object-contain rounded-md aspect-square pt-6"
+                    className="object-contain rounded-md aspect-square"
                 />
-
-            </motion.div>
-            <motion.div
-            >
-                <motion.h1
-                    className="text-left text-2xl font-bold md:text-3xl"
-                >
-                    {info.title}
-                </motion.h1>
-                <motion.h1
-                    className="text-left text-xs font-normal"
-                >
-                    {info.type}
-                </motion.h1>
-            </motion.div>
-
-            <motion.div
-                variants={FADE_UP_ANIMATION_VARIANTS}
-            >
-                <div className='flex items-center justify-start gap-4'>
-                    <Button asChild size={'sm'} className='text-primary-foreground'><Link href={info.links.demolink} target='_blank' >view demo<ArrowUpRight className='w-5 h-5' /> </Link></Button>
-                    <Button asChild size={'sm'} className='text-primary-foreground'><Link href={info.links.sourcelink} target='_blank' >source code <ArrowUpRight className='w-5 h-5' /> </Link></Button>
-                </div>
-
-            </motion.div>
-            <motion.div
-                className="w-full flex flex-col items-start justify-start rounded-2xl"
-                variants={FADE_UP_ANIMATION_VARIANTS}
-            >
-                {info.description.map((item: { heading: string, para: string }, index: number) => (
-                    <div key={index} className="mb-4">
-                        <h3 className="text-lg font-semibold">{item.heading}</h3>
-                        <p className="text-sm">{item.para}</p>
-                    </div>
-                ))}
-            </motion.div>
-        </motion.div>
+            </CardContent>
+        </Card>
     )
 }

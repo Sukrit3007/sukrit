@@ -1,10 +1,8 @@
 'use client'
 
-import MoreCard from "@/components/cards/more-card";
-import WorkCard from "@/components/cards/work-card";
+import MyWork from "@/components/cards/my-work";
 import { Separator } from "@/components/ui/separator";
 import { aboutinfo } from "@/data/about";
-import { workinfo } from "@/data/work";
 import { motion } from "framer-motion";
 
 export default function IndexPage() {
@@ -12,6 +10,7 @@ export default function IndexPage() {
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0, transition: { type: "spring" } },
   };
+  
   return (
     <section>
       <motion.div
@@ -43,15 +42,9 @@ export default function IndexPage() {
         </motion.div>
         <motion.div
           variants={FADE_UP_ANIMATION_VARIANTS}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           <>
-            {workinfo.map((info: any) =>
-              <div key={info.id}>
-                <WorkCard info={info} />
-              </div>
-            )}
-            <MoreCard />
+            <MyWork/>
           </>
         </motion.div>
       </motion.div>

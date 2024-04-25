@@ -1,5 +1,4 @@
 import "@/styles/globals.css"
-
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
@@ -43,16 +42,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Craft.Section>
-              <Craft.Container>
-                <SiteHeader />
-                <div>{children}</div>
-                <Footer/>
-              </Craft.Container>
-            </Craft.Section>
-            <TailwindIndicator />
-          </ThemeProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <Craft.Section>
+                <Craft.Container>
+                  <SiteHeader />
+                  <div>{children}</div>
+                  <Footer/>
+                </Craft.Container>
+              </Craft.Section>
+              <TailwindIndicator />
+            </ThemeProvider>
         </body>
       </html>
     </>
