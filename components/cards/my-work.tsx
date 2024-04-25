@@ -24,8 +24,8 @@ export default function MyWork() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {works.map((work,index) => (
-          <div key={index}>
+        {works.map((work:any) => (
+          <div key={work._id}>
             <WorkCard work={work} />
           </div>
         ))}
