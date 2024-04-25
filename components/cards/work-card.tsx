@@ -52,8 +52,8 @@ export default function WorkCard({ work }: { work: any }) {
                         <DialogDescription>{work.title}</DialogDescription>
                     </DialogHeader>
                     <div className="w-fit flex flex-row gap-2 items-start justify-start border rounded-3xl border-primary ">
-                        <Button asChild variant={'link'} size={'sm'}><Link href={work.demolink} target="_blank">view demo <ArrowUpRight className='w-5 h-5' /> </Link></Button>
-                        <Button asChild variant={'link'} size={'sm'}><Link href={work.sourcelink} target="_blank">source code <ArrowUpRight className='w-5 h-5' /> </Link></Button>
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.demolink} target="_blank">view demo <ArrowUpRight className='size-5' /> </Link></Button>
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.sourcelink} target="_blank">source code <ArrowUpRight className='size-5' /> </Link></Button>
                     </div>
                     <div className="w-full flex items-center justify-center">
                         <Image
@@ -92,8 +92,8 @@ export default function WorkCard({ work }: { work: any }) {
                         />
                     </div>
                     <div className="w-full flex flex-row gap-6 items-center justify-center mt-4">
-                        <Button asChild variant={'link'} size={'sm'}><Link href={work.demolink} target="_blank">view demo <ArrowUpRight className='w-5 h-5' /> </Link></Button>
-                        <Button asChild variant={'link'} size={'sm'}><Link href={work.sourcelink} target="_blank">source code <ArrowUpRight className='w-5 h-5' /> </Link></Button>
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.demolink} target="_blank">view demo <ArrowUpRight className='size-5' /> </Link></Button>
+                        <Button asChild variant={'link'} size={'sm'}><Link href={work.sourcelink} target="_blank">source code <ArrowUpRight className='size-5' /> </Link></Button>
                     </div>
                     <div className="px-6 mt-4 mb-6 text-left">
                         {work.description}
@@ -112,6 +112,9 @@ export function ShowCard({ work }: { work: any }) {
                 <CardTitle className="text-4xl font-bold ">{work.title}</CardTitle>
                 <h1 className="text-sm ">{work.type}</h1>
             </CardHeader>
+            <div>
+                
+            </div>
             <CardContent className="flex items-center justify-center bg-white rounded-2xl">
                 <Image
                     src={urlFor(work.image).url()}
