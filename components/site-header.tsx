@@ -2,14 +2,11 @@
 
 
 import Link from "next/link"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { Button,  } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"

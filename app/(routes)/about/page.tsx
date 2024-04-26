@@ -48,6 +48,7 @@ export default function about() {
                         <div className="flex flex-col gap-6 w-fit items-start justify-start">
                             <Button asChild variant={'link'} size={'sm'}><Link href={aboutinfo.links.email} >email <ArrowUpRight className='size-5' /> </Link></Button>
                             <Button asChild variant={'link'} size={'sm'}><Link href={aboutinfo.links.linkedin} >linkedin <ArrowUpRight className='size-5' /> </Link></Button>
+                            <Button asChild variant={'link'} size={'sm'}><Link href={aboutinfo.links.github} >github <ArrowUpRight className='size-5' /> </Link></Button>
                         </div>
                     </motion.div>
                     <motion.div

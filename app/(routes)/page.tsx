@@ -1,16 +1,16 @@
 'use client'
 
-import MyWork from "@/components/cards/my-work";
+
+import MyWork from "@/components/cards/my-word";
 import { Separator } from "@/components/ui/separator";
 import { aboutinfo } from "@/data/about";
 import { motion } from "framer-motion";
 
-export default function IndexPage() {
+export default function Home() {
   const FADE_UP_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0, transition: { type: "spring" } },
   };
-  
   return (
     <section>
       <motion.div
@@ -43,12 +43,9 @@ export default function IndexPage() {
         <motion.div
           variants={FADE_UP_ANIMATION_VARIANTS}
         >
-          <>
-            <MyWork/>
-          </>
+          <MyWork/>
         </motion.div>
       </motion.div>
-
     </section>
-  )
+  );
 }
