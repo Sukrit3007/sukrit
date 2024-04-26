@@ -8,7 +8,7 @@ const Footer = () => {
     <div className='flex flex-col items-center justify-center pt-12'>
         <Separator/>
         <div className='pt-6'>
-            <h1 className='text-sm'>Built by Sukrit</h1>
+            <h1 className='text-sm'>🌐 Built by Sukrit</h1>
         </div>
     </div>
   )

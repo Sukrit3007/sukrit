@@ -11,7 +11,7 @@ const MoreCard = () => {
             <CardContent className='pt-6'>
                 <div className='p-4'>
                     <h1 className='text-5xl font-bold font-foreground'>
-                        Work in progress...
+                        👨🏻‍💻 Work in progress...
                     </h1>
                 </div>
             </CardContent>

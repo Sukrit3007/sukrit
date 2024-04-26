@@ -2,8 +2,9 @@
 
 
 import MyWork from "@/components/cards/my-word";
+import Heading from "@/components/heading";
+import SubHeading from "@/components/sub-heading";
 import { Separator } from "@/components/ui/separator";
-import { aboutinfo } from "@/data/about";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <section>
       <motion.div
-        className="flex flex-col gap-12"
+        className="flex flex-col gap-10 p-2 md:p-6"
         initial="hidden"
         animate="show"
         viewport={{ once: true }}
@@ -27,18 +28,16 @@ export default function Home() {
           },
         }}
       >
-        <motion.h1
-          className="text-left text-2xl font-normal md:text-3xl mt-12"
+        <motion.div
           variants={FADE_UP_ANIMATION_VARIANTS}
         >
-          Sukrit is a <span className="italic font-semibold">Full Stack Developer</span> based in {aboutinfo.city} City, seamlessly merging innovation with aesthetics.
-        </motion.h1>
+          <Heading/>
+        </motion.div>
         <Separator />
         <motion.div
           variants={FADE_UP_ANIMATION_VARIANTS}
-          className="text-4xl font-bold"
         >
-          Here&apos;s my work...
+          <SubHeading/>
         </motion.div>
         <motion.div
           variants={FADE_UP_ANIMATION_VARIANTS}

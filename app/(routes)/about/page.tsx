@@ -1,7 +1,10 @@
 'use client'
 
+import About from "@/components/about";
 import BackendCard from "@/components/cards/backend-card";
 import FrontendCard from "@/components/cards/frontend-card";
+import Heading from "@/components/heading";
+import SubHeading from "@/components/sub-heading";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { aboutinfo } from "@/data/about";
@@ -17,7 +20,7 @@ export default function about() {
     return (
         <section>
             <motion.div
-                className="flex flex-col gap-12"
+                className="flex flex-col gap-10 p-2 md:p-6"
                 initial="hidden"
                 animate="show"
                 viewport={{ once: true }}
@@ -30,40 +33,22 @@ export default function about() {
                     },
                 }}
             >
-                <motion.h1
-                    className="text-left text-2xl font-normal md:text-3xl mt-12"
-                    variants={FADE_UP_ANIMATION_VARIANTS}
-                >
-                    Sukrit is a <span className="italic font-semibold">Full Stack Developer</span> based in {aboutinfo.city} City.
-                </motion.h1>
-                <Separator />
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
-                    className="grid grid-cols-2"
-                >
-                    <motion.div
-                        variants={FADE_UP_ANIMATION_VARIANTS}
-                        className="col-span-1"
-                    >
-                        <div className="flex flex-col gap-6 w-fit items-start justify-start">
-                            <Button asChild variant={'link'} size={'sm'}><Link href={aboutinfo.links.email} >email <ArrowUpRight className='size-5' /> </Link></Button>
-                            <Button asChild variant={'link'} size={'sm'}><Link href={aboutinfo.links.linkedin} >linkedin <ArrowUpRight className='size-5' /> </Link></Button>
-                            <Button asChild variant={'link'} size={'sm'}><Link href={aboutinfo.links.github} >github <ArrowUpRight className='size-5' /> </Link></Button>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        variants={FADE_UP_ANIMATION_VARIANTS}
-                        className="col-span-1"
-                    >
-                        {aboutinfo.description.para1}<br/><br/>{aboutinfo.description.para2}
-                    </motion.div>
+                > 
+                <Heading/>
                 </motion.div>
                 <Separator />
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
-                    className="text-4xl md:text-7xl font-bold"
+                > 
+                    <About/>
+                </motion.div>
+                <Separator />
+                <motion.div
+                    variants={FADE_UP_ANIMATION_VARIANTS}
                 >
-                    Here&apos;s what you can expect from me...
+                    <SubHeading/>
                 </motion.div>
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
