@@ -10,10 +10,10 @@ export default function About() {
     return (
         <div className="grid grid-cols-2">
             <div className="col-span-1">
-                <div className="flex flex-col gap-6 w-fit items-start justify-start">
-                    <Link isExternal showAnchorIcon size="sm" href={aboutinfo.links.email} anchorIcon={<ArrowUpRight />}>email </Link>
-                    <Link isExternal showAnchorIcon size="sm" href={aboutinfo.links.linkedin} anchorIcon={<ArrowUpRight />}>linkedin </Link>
-                    <Link isExternal showAnchorIcon size="sm" href={aboutinfo.links.github} anchorIcon={<ArrowUpRight />}>github </Link>
+                <div className="flex flex-col gap-6 w-fit items-start justify-start font-bold">
+                    <Link isExternal showAnchorIcon size="md" href={aboutinfo.links.email} anchorIcon={<ArrowUpRight />}>email </Link>
+                    <Link isExternal showAnchorIcon size="md" href={aboutinfo.links.linkedin} anchorIcon={<ArrowUpRight />}>linkedin </Link>
+                    <Link isExternal showAnchorIcon size="md" href={aboutinfo.links.github} anchorIcon={<ArrowUpRight />}>github </Link>
                 </div>
             </div>
             <div className="col-span-1">
