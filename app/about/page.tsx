@@ -1,7 +1,7 @@
 'use client'
 
 import About from "@/components/about";
-import AboutInfo from "@/components/about-info";
+import AboutInfo from "@/components/cards/about-info";
 import Heading from "@/components/heading";
 import SubHeading from "@/components/sub-heading";
 import { Divider } from "@nextui-org/divider";

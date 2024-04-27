@@ -44,7 +44,7 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 				<Craft.Section>
                 <Craft.Container>
-					<div className="relative flex flex-col h-screen">
+					<div className="flex flex-col h-screen ">
 						<Navbar />
 						<Divider className="my-4" />
 							{children}

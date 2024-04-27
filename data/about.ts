@@ -10,7 +10,9 @@ export const aboutinfo = {
         github: 'https://github.com/Sukrit3007',
     },
     card: {
-        frontend: "I'll bring years of experience, big energy and fresh thinking.",
-        backend: 'Listen, challenge and reconnect the dots — joining your team with conviction and openness.',
+        card1: "I'll bring years of experience, big energy and fresh thinking.",
+        card2: 'Listen, challenge and reconnect the dots — joining your team with conviction and openness.',
+        card3: "Agile coding, robust architecture — your digital dreams, my code.",
+        card4: "Full stack, full throttle — let's build something extraordinary together.",
     }
 }

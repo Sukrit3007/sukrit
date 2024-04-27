@@ -22,7 +22,7 @@ const WorkCard = ({ work }: { work: any }) => {
                     width={500}
                     className="object-contain w-full h-full"
                 />
-                <CardFooter className=" justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-2 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+                <CardFooter className=" justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-2 absolute rounded-3xl bottom-1 w-[calc(100%_-_8px)] shadow-small m-2 z-10">
                     <div className="w-full flex items-start justify-start">
                         <p className="font-semibold text-white/80">
                             {work.title}
@@ -43,8 +43,8 @@ const WorkCard = ({ work }: { work: any }) => {
             >
                 <ModalContent>
                     {(onClose) => (
-                        <>
-                            <ModalHeader className="flex flex-col gap-1">{work.name}</ModalHeader>
+                        <>  
+                            <ModalHeader>{work.name}</ModalHeader>
                             <ModalBody>
                                 <p>{work.description1}</p>
                                 <p>{work.description2}</p>

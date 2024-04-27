@@ -24,17 +24,17 @@ export const Navbar = () => {
 	const handleConfetti = () => {
 		const jsConfetti = new JSConfetti();
 		jsConfetti.addConfetti({
-		  emojis: ['👋'],
-		  confettiRadius: 3,
-		  confettiNumber: 100,
+			emojis: ['👋'],
+			confettiRadius: 3,
+			confettiNumber: 100,
 		});
-	  };
+	};
 
 	return (
-		<NextUINavbar maxWidth="xl" position="sticky">
+		<NextUINavbar maxWidth="xl" position='sticky'>
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-1" href="/" onClick={handleConfetti}>
+					<NextLink className="flex justify-start items-center gap-1" href="#" onClick={handleConfetti}>
 						<p className="font-bold text-inherit text-primary-500">Sukrit.dev</p>
 					</NextLink>
 				</NavbarBrand>
@@ -64,17 +64,18 @@ export const Navbar = () => {
 			</NavbarContent>
 
 			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+				<ThemeSwitch />
 				<NavbarMenuToggle />
 			</NavbarContent>
 
 			<NavbarMenu>
-				<div className="mx-4 mt-2 flex flex-col gap-2">
+				<div className="pt-12 px-6 flex flex-col gap-2">
 					{siteConfig.navMenuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
 								href={item.href}
 								size="lg"
-								className="text-foreground"
+								className="text-foreground w-full"
 							>
 								{item.label}
 							</Link>
