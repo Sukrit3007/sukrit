@@ -1,6 +1,3 @@
-'use client'
-
-
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -15,42 +12,34 @@ import { link as linkStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
-import React, { useEffect } from 'react';
-import JSConfetti from 'js-confetti';
+import React from 'react';
 import { ThemeSwitch } from "@/components/theme-switch";
 
 
 export const Navbar = () => {
-	const handleConfetti = () => {
-		const jsConfetti = new JSConfetti();
-		jsConfetti.addConfetti({
-			emojis: ['👋'],
-			confettiRadius: 3,
-			confettiNumber: 100,
-		});
-	};
 
 	return (
-		<NextUINavbar maxWidth="xl" position='sticky'>
+		<NextUINavbar maxWidth="xl" position='static'>
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-1" href="#" onClick={handleConfetti}>
+					<NextLink className="flex justify-start items-center gap-1" href="#">
 						<p className="font-bold text-inherit text-primary-500">Sukrit.dev</p>
 					</NextLink>
 				</NavbarBrand>
 				<ul className="hidden lg:flex gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
-							<NextLink
+							<Link
 								className={clsx(
 									linkStyles({ color: "foreground" }),
 									"data-[active=true]:text-primary data-[active=true]:font-medium"
 								)}
 								color="foreground"
 								href={item.href}
+								underline="focus"
 							>
 								{item.label}
-							</NextLink>
+							</Link>
 						</NavbarItem>
 					))}
 				</ul>
@@ -76,6 +65,7 @@ export const Navbar = () => {
 								href={item.href}
 								size="lg"
 								className="text-foreground w-full"
+								underline="focus"
 							>
 								{item.label}
 							</Link>
