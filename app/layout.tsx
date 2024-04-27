@@ -1,57 +1,70 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
-
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { SiteHeader } from "@/components/site-header"
-import { ThemeProvider } from "@/components/theme-provider"
+import "@/styles/globals.css";
+import { Metadata, Viewport } from "next";
+import { siteConfig } from "@/config/site";
+import { fontSans } from "@/config/fonts";
+import { Providers } from "./providers";
+import { Navbar } from "@/components/navbar";
+import {Divider} from "@nextui-org/divider";
+import { Link } from "@nextui-org/link";
 import * as Craft from "@/components/craft";
-import Footer from "@/components/footer"
+import clsx from "clsx";
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
+	title: {
+		default: siteConfig.name,
+		template: `%s - ${siteConfig.name}`,
+	},
+	description: siteConfig.description,
+	icons: {
+		icon: "/favicon.ico",
+	},
+};
+
+export const viewport: Viewport = {
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "white" },
+		{ media: "(prefers-color-scheme: dark)", color: "black" },
+	],
 }
 
-interface RootLayoutProps {
-  children: React.ReactNode
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <Craft.Section>
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
+	return (
+		<html lang="en" suppressHydrationWarning>
+			<head />
+			<body
+				className={clsx(
+					"min-h-screen bg-background font-sans antialiased",
+					fontSans.variable
+				)}
+			>
+				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+				<Craft.Section>
                 <Craft.Container>
-                  <SiteHeader />
-                  <div>{children}</div>
-                  <Footer/>
-                </Craft.Container>
+					<div className="relative flex flex-col h-screen">
+						<Navbar />
+						<Divider className="my-4" />
+							{children}
+						<Divider className="my-4" />
+						<footer className="w-full flex items-center justify-center py-3">
+							<Link
+								isExternal
+								className="flex items-center gap-1 text-current"
+								href="https://github.com/Sukrit3007/sukrit"
+								title="nextui.org homepage"
+							>
+								<span className="text-default-600">🌐 Built by</span>
+								<p className="text-primary">Sukrit</p>
+							</Link>
+						</footer>
+					</div>
+					</Craft.Container>
               </Craft.Section>
-            </ThemeProvider>
-        </body>
-      </html>
-    </>
-  )
+				</Providers>
+			</body>
+		</html>
+	);
 }

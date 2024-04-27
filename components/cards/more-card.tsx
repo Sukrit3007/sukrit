@@ -1,22 +1,15 @@
 import React from 'react'
-import {
-    Card,
-    CardContent,
-} from "@/components/ui/card"
-
+import {Card, CardBody} from "@nextui-org/card";
+import { title } from '../primitives';
 
 const MoreCard = () => {
-    return (
-        <Card className='bg-green-300'>
-            <CardContent className='pt-6'>
-                <div className='p-4'>
-                    <h1 className='text-5xl font-bold font-foreground'>
-                        👨🏻‍💻 Work in progress...
-                    </h1>
-                </div>
-            </CardContent>
-        </Card>
-    )
+  return (
+    <Card className='bg-lime-300 text-black p-6'>
+      <CardBody>
+        <p className={title()}>Work in progress...</p>
+      </CardBody>
+    </Card>
+  )
 }
 
 export default MoreCard

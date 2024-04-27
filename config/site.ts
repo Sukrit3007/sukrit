@@ -1,7 +1,30 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "sukrit",
-  description:
-    "Sukrit - Full Stack Developer Portfolio: Explore Sukrit's projects, skills, and experience in full-stack web development.",
-}
+	name: "sukrit",
+	description: "Sukrit - Full Stack Developer Portfolio: Explore Sukrit's projects, skills, and experience in full-stack web development.",
+	navItems: [
+		{
+			label: "work",
+			href: "/",
+		},
+    {
+      label: "about",
+      href: "/about",
+    },
+	],
+	navMenuItems: [
+		{
+			label: "work",
+			href: "/",
+		},
+		{
+			label: "work",
+			href: "/",
+		},
+		{
+			label: "about",
+			href: "/about",
+		},
+	],
+};

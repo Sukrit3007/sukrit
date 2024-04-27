@@ -1,7 +1,7 @@
 import { work } from '@/data/work'
 import React from 'react'
-import WorkCard from './work-card'
 import MoreCard from './more-card'
+import WorkCard from './work-card'
 
 const MyWork = () => {
   return (

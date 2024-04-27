@@ -1,24 +1,19 @@
 'use client'
 
 import About from "@/components/about";
-import BackendCard from "@/components/cards/backend-card";
-import FrontendCard from "@/components/cards/frontend-card";
+import AboutInfo from "@/components/about-info";
 import Heading from "@/components/heading";
 import SubHeading from "@/components/sub-heading";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { aboutinfo } from "@/data/about";
+import { Divider } from "@nextui-org/divider";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
-export default function about() {
-    const FADE_UP_ANIMATION_VARIANTS = {
+export default function AboutPage() {
+	const FADE_UP_ANIMATION_VARIANTS = {
         hidden: { opacity: 0, y: 10 },
         show: { opacity: 1, y: 0, transition: { type: "spring" } },
     };
-    return (
-        <section>
+	return (
+		<section>
             <motion.div
                 className="flex flex-col gap-10 p-2 md:p-6"
                 initial="hidden"
@@ -38,13 +33,13 @@ export default function about() {
                 > 
                 <Heading/>
                 </motion.div>
-                <Separator />
+                <Divider />
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
                 > 
                     <About/>
                 </motion.div>
-                <Separator />
+                <Divider />
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
                 >
@@ -52,12 +47,10 @@ export default function about() {
                 </motion.div>
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
-                    <FrontendCard />
-                    <BackendCard />
+                    <AboutInfo/>
                 </motion.div>
             </motion.div>
         </section>
-    )
+	);
 }

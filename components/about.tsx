@@ -1,18 +1,19 @@
 'use client'
 
 import { aboutinfo } from "@/data/about"
-import { Button } from "./ui/button"
+import { Button } from "@nextui-org/button"
+import { Link } from "@nextui-org/link";
 import { ArrowUpRight } from "lucide-react"
-import Link from "next/link"
+
 
 export default function About() {
     return (
         <div className="grid grid-cols-2">
-            <div className="col-span-1"> 
+            <div className="col-span-1">
                 <div className="flex flex-col gap-6 w-fit items-start justify-start">
-                    <Button asChild size={'sm'}><Link href={aboutinfo.links.email} >email <ArrowUpRight className='size-5' /> </Link></Button>
-                    <Button asChild size={'sm'}><Link href={aboutinfo.links.linkedin} >linkedin <ArrowUpRight className='size-5' /> </Link></Button>
-                    <Button asChild size={'sm'}><Link href={aboutinfo.links.github} >github <ArrowUpRight className='size-5' /> </Link></Button>
+                    <Link isExternal showAnchorIcon size="sm" href={aboutinfo.links.email} anchorIcon={<ArrowUpRight />}>email </Link>
+                    <Link isExternal showAnchorIcon size="sm" href={aboutinfo.links.linkedin} anchorIcon={<ArrowUpRight />}>linkedin </Link>
+                    <Link isExternal showAnchorIcon size="sm" href={aboutinfo.links.github} anchorIcon={<ArrowUpRight />}>github </Link>
                 </div>
             </div>
             <div className="col-span-1">
