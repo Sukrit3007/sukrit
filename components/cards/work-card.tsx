@@ -4,6 +4,7 @@ import { Image } from "@nextui-org/image";
 import { Button } from "@nextui-org/button";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
 import { ArrowUpRight } from "lucide-react";
+import {Link} from "@nextui-org/link";
 
 const WorkCard = ({ work }: { work: any }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -22,13 +23,13 @@ const WorkCard = ({ work }: { work: any }) => {
                     width={500}
                     className="object-contain w-full h-full"
                 />
-                <CardFooter className=" justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-2 absolute rounded-3xl bottom-1 w-[calc(100%_-_8px)] shadow-small m-2 z-10">
+                <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden absolute rounded-3xl bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 mb-2 z-10">
                     <div className="w-full flex items-start justify-start">
                         <p className="font-semibold text-white/80">
                             {work.title}
                         </p>
                     </div>
-                    <Button onPress={onOpen} className="text-white" color="primary" radius="md" size="md">
+                    <Button onPress={onOpen} className="text-white" color="primary" radius="full" size="md">
                         Learn more
                     </Button>
                 </CardFooter>
@@ -44,18 +45,20 @@ const WorkCard = ({ work }: { work: any }) => {
                 <ModalContent>
                     {(onClose) => (
                         <>  
-                            <ModalHeader>{work.name}</ModalHeader>
+                            <ModalHeader>
+                                    {work.name}
+                            </ModalHeader>
                             <ModalBody>
                                 <p>{work.description1}</p>
                                 <p>{work.description2}</p>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" variant="light" radius="full" endContent={<ArrowUpRight/>}>
-                                    view demo
-                                </Button>
-                                <Button color="primary" variant="light" radius="full" endContent={<ArrowUpRight/>}>
-                                    source code
-                                </Button>
+                                <Link color="primary"  href={work.links.viewdemoLink} target="_blank">
+                                    view demo <ArrowUpRight/>
+                                </Link>
+                                <Link color="primary"  href={work.links.sourcecodeLink} target="_blank">
+                                    source code <ArrowUpRight/>
+                                </Link>
                                 <Button color="danger" variant="light" radius="full" onPress={onClose}>
                                     Close
                                 </Button>
