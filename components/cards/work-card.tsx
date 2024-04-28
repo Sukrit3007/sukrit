@@ -25,7 +25,7 @@ const WorkCard = ({ work }: { work: any }) => {
                     </div>
                     <RadialGradient />
                 </div>
-                <CardFooter className="justify-between before:bg-white/10 border-white/20  overflow-hidden absolute bottom-0 w-full px-10 shadow-smal z-10">
+                <CardFooter className="justify-between before:bg-white/10 border-white/20  overflow-hidden absolute bottom-0 w-full md:px-10 shadow-smal z-10">
                     <div className="w-full flex items-start justify-start">
                         <p className="text-sm font-medium text-white/80">
                             {work.name}

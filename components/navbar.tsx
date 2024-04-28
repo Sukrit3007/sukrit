@@ -52,6 +52,9 @@ export const Navbar = () => {
 					))}
 				</ul>
 			</NavbarContent>
+			<NavbarContent className="hidden md:flex" justify="end">
+				<ThemeSwitch />
+			</NavbarContent>
 
 
 			<NavbarContent className="flex md:hidden basis-1 pl-4" justify="end">
