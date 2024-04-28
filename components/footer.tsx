@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="w-full flex flex-col md:flex-row items-start  md:items-center p-6">
             <Link
                 isExternal
-                className="flex items-center gap-1 text-current"
+                className="flex flex-wrap  items-center gap-1 text-current"
                 href={aboutinfo.links.linkedin}
                 title="nextui.org homepage"
             >
@@ -17,7 +17,7 @@ const Footer = () => {
             </Link>
             <Link
                 isExternal
-                className="flex items-center gap-1 text-current"
+                className="flex flex-wrap items-center gap-1 text-current"
                 href={aboutinfo.links.linkedin}
                 title="nextui.org homepage"
             >
