@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -12,29 +14,27 @@ import { link as linkStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeSwitch } from "@/components/theme-switch";
-import { Image } from "@nextui-org/image";
+import Logo from "./logo";
 
 
 export const Navbar = () => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<NextUINavbar maxWidth="xl" position='static'>
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+		<NextUINavbar  
+			position='static'
+			isMenuOpen={isMenuOpen}
+      		onMenuOpenChange={setIsMenuOpen}
+		>
+			<NavbarContent justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-2" href="#">
-						<Image
-							src='/favicon.ico'
-							alt='sukrit.dev'
-							width={100}
-							height={100}
-							className="object-contain w-6 h-6"
-						/>
-						<p className="font-bold text-inherit text-primary-500">Sukrit.dev</p>
+					<NextLink href="#">
+						<Logo />
 					</NextLink>
 				</NavbarBrand>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
+				<ul className="hidden md:flex gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<Link
@@ -53,27 +53,23 @@ export const Navbar = () => {
 				</ul>
 			</NavbarContent>
 
-			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
-				justify="end"
-			>
+
+			<NavbarContent className="flex md:hidden basis-1 pl-4" justify="end">
 				<ThemeSwitch />
+				<NavbarMenuToggle
+					aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+				/>
 			</NavbarContent>
 
-			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<ThemeSwitch />
-				<NavbarMenuToggle />
-			</NavbarContent>
-
-			<NavbarMenu>
-				<div className="pt-12 px-6 flex flex-col gap-2">
+			<NavbarMenu >
+				<div className="pt-12 px-6 flex flex-col gap-2" >
 					{siteConfig.navMenuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
 								href={item.href}
 								size="lg"
 								className="text-foreground w-full"
-								underline="focus"
+								onClick={() => setIsMenuOpen(false)}
 							>
 								{item.label}
 							</Link>

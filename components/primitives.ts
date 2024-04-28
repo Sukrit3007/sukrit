@@ -51,3 +51,16 @@ export const subtitle = tv({
     fullWidth: true
   }
 });
+
+export const cardtitle = tv({
+	base: "tracking-tight inline font-semibold text-black text-3xl",
+	variants: {
+		fullWidth: {
+			true: "w-full block",
+		},
+	},
+  defaultVariants:{
+    fullWidth: true
+  }
+});
+
