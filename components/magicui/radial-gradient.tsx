@@ -29,7 +29,7 @@ interface RadialProps {
 
   /**
    * The color to transition to
-   * @default #290A5C
+   * @default #348ef6
    * @type string
    * */
   to?: string;
@@ -58,8 +58,8 @@ interface RadialProps {
 
 const RadialGradient = ({
   type = "circle",
-  from = "hsla(213, 95%, 44%, 1)",
-  to = "rgba(120,119,198,0.3)",
+  from = "rgba(52, 142, 246,0.3)",
+  to = "hsla(0, 0%, 0%, 1)",
   size = 300,
   origin = "center",
   className,

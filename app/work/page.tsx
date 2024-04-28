@@ -2,10 +2,8 @@
 
 
 import MyWork from "@/components/cards/my-work";
-import ContactButton from "@/components/contact-button";
 import Heading from "@/components/heading";
 import SubHeading from "@/components/sub-heading";
-import TechStack from "@/components/tech-stack";
 import { Divider } from "@nextui-org/divider";
 import { motion } from "framer-motion";
 
@@ -34,15 +32,8 @@ export default function Home() {
 				<motion.div
 					variants={FADE_UP_ANIMATION_VARIANTS}
 				>
-					<Heading />
+					<SubHeading />
 				</motion.div>
-				<Divider />
-				<motion.div
-					variants={FADE_UP_ANIMATION_VARIANTS}
-				>
-					<ContactButton/>
-				</motion.div>
-				<Divider />
 				<motion.div
 					variants={FADE_UP_ANIMATION_VARIANTS}
 				>

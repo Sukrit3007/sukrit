@@ -3,7 +3,7 @@
 import { aboutinfo } from "@/data/about"
 import { Button } from "@nextui-org/button"
 import { Link } from "@nextui-org/link";
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, GithubIcon, LinkedinIcon, Mail } from "lucide-react"
 
 
 export default function About() {
@@ -11,9 +11,33 @@ export default function About() {
         <div className="grid grid-cols-2">
             <div className="col-span-1">
                 <div className="flex flex-col gap-6 w-fit items-start justify-start font-bold">
-                    <Link isExternal showAnchorIcon size="md" href={aboutinfo.links.email} anchorIcon={<ArrowUpRight />}>email </Link>
-                    <Link isExternal showAnchorIcon size="md" href={aboutinfo.links.linkedin} anchorIcon={<ArrowUpRight />}>linkedin </Link>
-                    <Link isExternal showAnchorIcon size="md" href={aboutinfo.links.github} anchorIcon={<ArrowUpRight />}>github </Link>
+                    <Button
+                        href={aboutinfo.links.email}
+                        as={Link}
+                        color="secondary"
+                        variant="flat"
+                        endContent={<Mail className='size-5' />}
+                    >
+                        Email
+                    </Button>
+                    <Button
+                        href={aboutinfo.links.linkedin}
+                        as={Link}
+                        color="primary"
+                        variant="flat"
+                        endContent={<LinkedinIcon className='size-5' />}
+                    >
+                        Linkdein
+                    </Button>
+                    <Button
+                        href={aboutinfo.links.github}
+                        as={Link}
+                        color="success"
+                        variant="flat"
+                        endContent={<GithubIcon className='size-5' />}
+                    >
+                        Github
+                    </Button>
                 </div>
             </div>
             <div className="col-span-1">

@@ -7,7 +7,7 @@ export const siteConfig = {
   navItems: [
     {
       label: "work",
-      href: "/",
+      href: "/work",
     },
     {
       label: "about",
@@ -17,7 +17,7 @@ export const siteConfig = {
   navMenuItems: [
     {
       label: "work",
-      href: "/",
+      href: "/work",
     },
     {
       label: "about",

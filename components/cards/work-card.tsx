@@ -7,6 +7,7 @@ import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure
 import { Link } from "@nextui-org/link";
 import {  title } from "../primitives";
 import RadialGradient from "../magicui/radial-gradient";
+import LinearGradient from "../magicui/linear-gradient";
 
 const WorkCard = ({ work }: { work: any }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -17,13 +18,14 @@ const WorkCard = ({ work }: { work: any }) => {
                 radius="lg"
                 className="border-none"
             >
-                <div className=" relative flex h-full w-full items-center justify-center rounded-lg bg-background pt-10 pb-32 px-10 md:shadow-xl">
+                <div className=" relative flex h-full w-full items-center justify-center rounded-lg pt-10 pb-32 px-10 md:shadow-xl">
                     <div className="z-20 h-full w-full">
                         <p className={title()}>
                             {work.title}
                         </p>
                     </div>
-                    <RadialGradient />
+                    {/* <RadialGradient /> */}
+                    <LinearGradient/>
                 </div>
                 <CardFooter className="justify-between before:bg-white/10 border-white/20  overflow-hidden absolute bottom-0 w-full md:px-10 shadow-smal z-10">
                     <div className="w-full flex items-start justify-start">

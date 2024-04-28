@@ -30,7 +30,7 @@ export const Navbar = () => {
 		>
 			<NavbarContent justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink href="#">
+					<NextLink href="/" onClick={() => setIsMenuOpen(false)}>
 						<Logo />
 					</NextLink>
 				</NavbarBrand>
