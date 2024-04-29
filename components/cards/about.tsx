@@ -3,7 +3,7 @@
 import { aboutinfo } from "@/data/about"
 import { Button } from "@nextui-org/button"
 import { Link } from "@nextui-org/link";
-import { ArrowUpRight, GithubIcon, LinkedinIcon, Mail } from "lucide-react"
+import { GithubIcon, LinkedinIcon, Mail } from "lucide-react"
 
 
 export default function About() {

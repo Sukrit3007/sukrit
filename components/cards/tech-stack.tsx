@@ -1,10 +1,6 @@
 import { Card, CardBody } from "@nextui-org/card";
-import { Dock, DockIcon } from "../magicui/dock";
 import React from "react";
 import { cardtitle } from "../primitives";
-import Marquee from "../magicui/marquee";
-import { Button } from "@nextui-org/button";
-import {Tooltip} from "@nextui-org/tooltip";
 import { aboutinfo } from "@/data/about";
 
 export default function TechStack() {
