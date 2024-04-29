@@ -1,6 +1,6 @@
 'use client'
 
-import About from "@/components/about";
+import About from "@/components/cards/about";
 import AboutInfo from "@/components/cards/about-info";
 import Heading from "@/components/heading";
 import SubHeading from "@/components/sub-heading";
@@ -28,12 +28,6 @@ export default function AboutPage() {
                     },
                 }}
             >
-                <motion.div
-                    variants={FADE_UP_ANIMATION_VARIANTS}
-                > 
-                <Heading/>
-                </motion.div>
-                <Divider />
                 <motion.div
                     variants={FADE_UP_ANIMATION_VARIANTS}
                 > 

@@ -13,6 +13,7 @@ export default function About() {
                 <div className="flex flex-col gap-6 w-fit items-start justify-start font-bold">
                     <Button
                         href={aboutinfo.links.email}
+                        target='_blank'
                         as={Link}
                         color="secondary"
                         variant="flat"
@@ -22,6 +23,7 @@ export default function About() {
                     </Button>
                     <Button
                         href={aboutinfo.links.linkedin}
+                        target='_blank'
                         as={Link}
                         color="primary"
                         variant="flat"
@@ -31,6 +33,7 @@ export default function About() {
                     </Button>
                     <Button
                         href={aboutinfo.links.github}
+                        target='_blank'
                         as={Link}
                         color="success"
                         variant="flat"

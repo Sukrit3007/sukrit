@@ -24,15 +24,20 @@ export const Navbar = () => {
 
 	return (
 		<NextUINavbar  
-			position='static'
+			position='sticky'
 			isMenuOpen={isMenuOpen}
       		onMenuOpenChange={setIsMenuOpen}
 		>
 			<NavbarContent justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink href="/" onClick={() => setIsMenuOpen(false)}>
-						<Logo />
-					</NextLink>
+						<Link
+							color="primary"
+							isBlock
+							href="/" 
+							onClick={() => setIsMenuOpen(false)}
+						>
+							<Logo />
+						</Link>
 				</NavbarBrand>
 				<ul className="hidden md:flex gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
@@ -42,9 +47,9 @@ export const Navbar = () => {
 									linkStyles({ color: "foreground" }),
 									"data-[active=true]:text-primary data-[active=true]:font-medium"
 								)}
-								color="foreground"
+								isBlock
+								color="primary"
 								href={item.href}
-								underline="focus"
 							>
 								{item.label}
 							</Link>
@@ -71,6 +76,7 @@ export const Navbar = () => {
 							<Link
 								href={item.href}
 								size="lg"
+								isBlock
 								className="text-foreground w-full"
 								onClick={() => setIsMenuOpen(false)}
 							>
