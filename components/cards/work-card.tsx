@@ -41,7 +41,7 @@ const WorkCard = ({ work }: { work: any }) => {
                 size="4xl"
                 isOpen={isOpen}
                 backdrop={'blur'}
-                placement={'bottom-center'}
+                placement={'bottom'}
                 onOpenChange={onOpenChange}
                 scrollBehavior={'inside'}
             >
