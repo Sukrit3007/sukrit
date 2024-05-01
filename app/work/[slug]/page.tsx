@@ -4,10 +4,11 @@ import { client, urlForImage } from "@/lib/sanity";
 import { Button } from "@nextui-org/button";
 import { Chip } from "@nextui-org/chip";
 import { Divider } from "@nextui-org/divider";
-import { Image } from "@nextui-org/image";
+import { Image as NextImage } from "@nextui-org/image";
 import { Link } from "@nextui-org/link";
 import { motion } from "framer-motion";
 import { PortableText } from "next-sanity";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -27,7 +28,22 @@ export default function workpage() {
             }
         };
         fetchData();
-    }, [work]);
+    }, []);
+
+    const PortableTextImageComponent = {
+        types: {
+            image: ({ value }: { value: any }) => (
+                <Image
+                    src={urlForImage(value).url()}
+                    alt="Image"
+                    className="rounded-lg w-full object-contain aspect-auto"
+                    width={800}
+                    height={800}
+                />
+            ),
+        },
+
+    }
 
     const FADE_UP_ANIMATION_VARIANTS = {
         hidden: { opacity: 0, y: 10 },
@@ -55,11 +71,11 @@ export default function workpage() {
                         variants={FADE_UP_ANIMATION_VARIANTS}
                     >
                         <div className="flex flex-col gap-6">
-                            <div className="flex flex-col gap-2">
-                                <h1 className="text-left text-2xl font-semibold md:text-4xl">
+                            <div className="flex flex-col gap-2 text-left ">
+                                <h1 className="text-2xl font-semibold md:text-4xl">
                                     {work[0].name}
                                 </h1>
-                                <p className='text-left text-md'>
+                                <p className='text-md'>
                                     {work[0].title}
                                 </p>
                                 <Chip color="warning" variant="flat" size="sm">{work[0].type}</Chip>
@@ -70,7 +86,7 @@ export default function workpage() {
                         variants={FADE_UP_ANIMATION_VARIANTS}
                     >
                         <div className="flex items-start justify-center">
-                            <Image
+                            <NextImage
                                 src={urlForImage(work[0].image).url()}
                                 alt={work[0].name}
                                 width={1000}
@@ -85,8 +101,9 @@ export default function workpage() {
                     >
                         <div className="flex flex-row gap-2">
                             <Button
-                                href={work.sourcecodeLink}
+                                href={work[0].sourcecodeLink}
                                 as={Link}
+                                target="_blank"
                                 color="secondary"
                                 showAnchorIcon
                                 variant="flat"
@@ -94,8 +111,9 @@ export default function workpage() {
                                 Source code
                             </Button>
                             <Button
-                                href={work.viewdemoLink}
+                                href={work[0].viewdemoLink}
                                 as={Link}
+                                target="_blank"
                                 color="success"
                                 showAnchorIcon
                                 variant="flat"
@@ -108,10 +126,10 @@ export default function workpage() {
                     <motion.div
                         variants={FADE_UP_ANIMATION_VARIANTS}
                     >
-                        <div className="border border-red-500 prose  prose-neutral prose-headings:2xl dark:prose-invert">
-                           <div className="min-w-full ">
-                            <PortableText value={work[0].description}/>
-                           </div>
+                        <div className="prose  prose-neutral prose-headings:2xl dark:prose-invert">
+                            <div className="min-w-full ">
+                                <PortableText value={work[0].description} components={PortableTextImageComponent} />
+                            </div>
                         </div>
 
                     </motion.div>
