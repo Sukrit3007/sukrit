@@ -12,9 +12,7 @@ const MyWork = () => {
       const query= `*[_type == 'mywork']`
       try {
         const data = await client.fetch(query);
-        // console.log(data)
         setWork(data);
-        // console.log(work)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
