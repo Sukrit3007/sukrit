@@ -18,7 +18,7 @@ const Footer = () => {
             <Link
                 isExternal
                 className="flex flex-wrap items-center gap-1 text-current"
-                href={aboutinfo.links.linkedin}
+                href='https://github.com/Sukrit3007/sukrit'
                 title="nextui.org homepage"
             >
                 <span className="text-default-600" >The source code is available on</span>
