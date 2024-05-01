@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'sukrit.vercel.app',
 
-  projectId: 'rfibn1v9',
+  projectId: 'rldj4kkg',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
