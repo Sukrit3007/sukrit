@@ -8,6 +8,8 @@ import { Link } from "@nextui-org/link";
 import {  title } from "../primitives";
 import RadialGradient from "../magicui/radial-gradient";
 import LinearGradient from "../magicui/linear-gradient";
+import { PortableText } from "next-sanity";
+import { urlForImage } from "@/lib/sanity";
 
 const WorkCard = ({ work }: { work: any }) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -69,7 +71,7 @@ const WorkCard = ({ work }: { work: any }) => {
 }
 export default WorkCard
 
-
+ 
 function ModalBodyContent({ work }: any) {
     return (
         <div className="flex flex-col gap-8">
@@ -77,7 +79,7 @@ function ModalBodyContent({ work }: any) {
             <Card >
                 <CardBody className="bg-lime-300 p-0">
                     <Image
-                        src={work.image}
+                        src={urlForImage(work.image).url()}
                         alt={work.name}
                         width={500}
                         height={500}
@@ -88,7 +90,7 @@ function ModalBodyContent({ work }: any) {
 
             <div className="flex flex-row gap-2">
                 <Button
-                    href={work.links.sourcecodeLink}
+                    href={work.sourcecodeLink}
                     as={Link}
                     color="primary"
                     showAnchorIcon
@@ -97,7 +99,7 @@ function ModalBodyContent({ work }: any) {
                     Source code
                 </Button>
                 <Button
-                    href={work.links.viewdemoLink}
+                    href={work.viewdemoLink}
                     as={Link}
                     color="primary"
                     showAnchorIcon
@@ -120,7 +122,7 @@ function ModalBodyContent({ work }: any) {
                             <Chip color="warning" variant="flat" size="sm">{work.type}</Chip>
                         </div>
                         <div>
-                            <p>{work.description1}</p>
+                            <PortableText value={work.description} />
                         </div>
                     </div>
                 </CardBody>
