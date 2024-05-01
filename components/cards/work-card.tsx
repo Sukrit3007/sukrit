@@ -12,34 +12,42 @@ import { PortableText } from "next-sanity";
 import { urlForImage } from "@/lib/sanity";
 
 const WorkCard = ({ work }: { work: any }) => {
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
     return (
-        <div >
-            <Card
-                isFooterBlurred
-                radius="lg"
-                className="border-none"
-            >
-                <div className=" relative flex h-full w-full items-center justify-center rounded-lg pt-10 pb-32 px-10 md:shadow-xl">
-                    <div className="z-20 h-full w-full">
-                        <p className={title()}>
-                            {work.title}
-                        </p>
+            <Link href={`/work/${work.slug.current}`} className="w-full h-full">
+                <Card
+                    isFooterBlurred
+                    radius="lg"
+                    className="border-none w-full h-full"
+                >
+                    <div className=" relative flex h-full w-full items-center justify-center rounded-lg pt-10 pb-32 px-10 md:shadow-xl">
+                        <div className="z-20 h-full w-full">
+                            <p className={title()}>
+                                {work.title}
+                            </p>
+                        </div>
+                        <LinearGradient/>
                     </div>
-                    <LinearGradient/>
-                </div>
-                <CardFooter className="justify-between before:bg-white/10 border-white/20  overflow-hidden absolute bottom-0 w-full md:px-10 shadow-small z-10">
-                    <div className="w-full flex items-start justify-start">
-                        <p className="text-sm font-medium text-white/80">
-                            {work.name}
-                        </p>
-                    </div>
-                    <Button onPress={onOpen} className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="full" size="md">
-                        Details
-                    </Button>
-                </CardFooter>
-            </Card>
-            <Modal
+                    <CardFooter className="justify-between before:bg-white/10 border-white/20  overflow-hidden absolute bottom-0 w-full md:px-10 shadow-small z-10">
+                        <div className="w-full flex items-start justify-start">
+                            <p className="text-sm font-medium text-white/80">
+                                {work.name}
+                            </p>
+                        </div>
+                        <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="full" size="md">
+                            Details
+                        </Button>
+                    </CardFooter>
+                </Card>
+            </Link>
+    )
+}
+export default WorkCard
+
+
+function ModalBodyContent({ work }: any) {
+    return (
+        <div className="flex flex-col gap-8">
+            {/* <Modal
                 size="4xl"
                 isOpen={isOpen}
                 backdrop={'blur'}
@@ -52,11 +60,11 @@ const WorkCard = ({ work }: { work: any }) => {
                         <>
                             <ModalHeader>
                             </ModalHeader>
-
+            
                             <ModalBody>
                                 <ModalBodyContent work={work} />
                             </ModalBody>
-
+            
                             <ModalFooter>
                                 <Button color="danger" variant="light" radius="full" onPress={onClose}>
                                     Close
@@ -65,18 +73,9 @@ const WorkCard = ({ work }: { work: any }) => {
                         </>
                     )}
                 </ModalContent>
-            </Modal>
-        </div>
-    )
-}
-export default WorkCard
+            </Modal> */}
 
- 
-function ModalBodyContent({ work }: any) {
-    return (
-        <div className="flex flex-col gap-8">
-
-            <Card >
+            <Card  className="w-full">
                 <CardBody className="bg-lime-300 p-0">
                     <Image
                         src={urlForImage(work.image).url()}

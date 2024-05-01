@@ -10,6 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100ch',
+          }
+        }
+      },
       animation: {
         ripple: "ripple 3400ms ease infinite",
         grid: "grid 15s linear infinite",
@@ -41,5 +48,5 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [require('@tailwindcss/typography'),nextui()],
 }
