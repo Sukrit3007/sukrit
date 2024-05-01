@@ -1,18 +1,18 @@
 import React from "react";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
-import Image from "next/image";
 import { Button } from "@nextui-org/button";
-import { Chip } from "@nextui-org/chip";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
-import { Link } from "@nextui-org/link";
 import { title } from "../primitives";
 import RadialGradient from "../magicui/radial-gradient";
 import LinearGradient from "../magicui/linear-gradient";
 import Meteors from "../magicui/meteors";
+import { useRouter } from "next/navigation";
 
 const WorkCard = ({ work }: { work: any }) => {
+    const router = useRouter()
+    function handleClick () {
+        router.push(`/work/${work.slug.current}`)
+    }
     return (
-        <Link href={`/work/${work.slug.current}`} className="w-full h-full">
             <Card
                 isFooterBlurred
                 radius="lg"
@@ -33,12 +33,11 @@ const WorkCard = ({ work }: { work: any }) => {
                             {work.name}
                         </p>
                     </div>
-                    <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="full" size="md">
+                    <Button onClick={handleClick} className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="full" size="md">
                         Details
                     </Button>
                 </CardFooter>
             </Card>
-        </Link>
     )
 }
 export default WorkCard
