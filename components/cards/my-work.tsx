@@ -4,29 +4,22 @@ import React, { useEffect, useState } from 'react'
 import MoreCard from './more-card'
 import WorkCard from './work-card'
 import { client } from '@/lib/sanity'
+import { useQuery, useIsFetching } from "@tanstack/react-query";
 import CardSkeleton from '../loading/card-skeleton'
 
 const MyWork = () => {
-  const [work, setWork] = useState([])
-  const [isLoading, setLoading] = useState(true)
+  const query= `*[_type == 'mywork']`
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const query= `*[_type == 'mywork']`
-      try {
-        const data = await client.fetch(query);
-        setWork(data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, []);
-  console.log(work)
+  const {data:work, isLoading} = useQuery<any>({
+    queryKey:['work'],
+    queryFn: () =>
+      client.fetch(query)
+  })
 
   if (isLoading) {
-    
+    return (
+      <CardSkeleton/>
+    )
   }
 
   return (

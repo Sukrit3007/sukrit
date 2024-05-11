@@ -11,25 +11,26 @@ import { motion } from "framer-motion";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Spinner } from "@nextui-org/spinner";
 
 export default function workpage() {
     const url = useParams();
     const slug = JSON.stringify(url?.slug);
-    const [work, setWork] = useState<any>([])
+    const query = `*[_type == 'mywork' && slug.current == ${slug} ]`
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const query = `*[_type == 'mywork' && slug.current == ${slug} ]`
-            try {
-                const data = await client.fetch(query);
-                setWork(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
+    const { data: work, isLoading } = useQuery<any>({
+        queryKey: ['work', slug],
+        queryFn: () =>
+            client.fetch(query)
+    })
+    if (isLoading) {
+        return (
+            <div className="w-full flex items-start justify-start p-6">
+                <Spinner />
+            </div>
+        )
+    }
 
     const PortableTextImageComponent = {
         types: {
@@ -53,8 +54,9 @@ export default function workpage() {
 
     return (
         <section>
-            {work.length > 0 && (
+            {work.map((work: any) => (
                 <motion.div
+                    key={work._id}
                     className="flex flex-col gap-10 p-2 md:p-6"
                     initial="hidden"
                     animate="show"
@@ -74,12 +76,12 @@ export default function workpage() {
                         <div className="flex flex-col gap-6">
                             <div className="flex flex-col gap-2 text-left ">
                                 <h1 className="text-2xl font-semibold md:text-4xl">
-                                    {work[0].name}
+                                    {work.name}
                                 </h1>
                                 <p className='text-md'>
-                                    {work[0].title}
+                                    {work.title}
                                 </p>
-                                <Chip color="warning" variant="flat" size="sm">{work[0].type}</Chip>
+                                <Chip color="warning" variant="flat" size="sm">{work.type}</Chip>
                             </div>
                         </div>
                     </motion.div>
@@ -88,8 +90,8 @@ export default function workpage() {
                     >
                         <div className="flex items-start justify-center">
                             <NextImage
-                                src={urlForImage(work[0].image).url()}
-                                alt={work[0].name}
+                                src={urlForImage(work.image).url()}
+                                alt={work.name}
                                 width={1000}
                                 height={500}
                                 className="object-contain aspect-video h-full w-full rounded-xl"
@@ -102,7 +104,7 @@ export default function workpage() {
                     >
                         <div className="flex flex-row gap-2">
                             <Button
-                                href={work[0].sourcecodeLink}
+                                href={work.sourcecodeLink}
                                 as={Link}
                                 target="_blank"
                                 color="secondary"
@@ -112,7 +114,7 @@ export default function workpage() {
                                 Source code
                             </Button>
                             <Button
-                                href={work[0].viewdemoLink}
+                                href={work.viewdemoLink}
                                 as={Link}
                                 target="_blank"
                                 color="success"
@@ -129,14 +131,14 @@ export default function workpage() {
                     >
                         <div className="prose  prose-neutral prose-headings:2xl dark:prose-invert">
                             <div className="min-w-full ">
-                                <PortableText value={work[0].description} components={PortableTextImageComponent} />
+                                <PortableText value={work.description} components={PortableTextImageComponent} />
                             </div>
                         </div>
 
                     </motion.div>
-
                 </motion.div>
-            )}
+
+            ))}
         </section>
     );
 }

@@ -8,6 +8,7 @@ import { Divider } from "@nextui-org/divider";
 import * as Craft from "@/components/craft";
 import clsx from "clsx";
 import Footer from "@/components/footer";
+import { TankStackQueryClientProvider } from "@/components/tanstack-query-provider";
 
 export const metadata: Metadata = {
 	title: {
@@ -33,28 +34,30 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<head />
-			<body
-				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
-				)}
-			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark",children }}>
-					<Craft.Section>
-						<Craft.Container>
-							<div className="flex flex-col h-screen">
-								<Navbar />
-								<Divider className="my-4" />
-								{children}
-								<Divider className="my-4" />
-								<Footer/>
-							</div>
-						</Craft.Container>
-					</Craft.Section>
-				</Providers>
-			</body>
-		</html>
+		<TankStackQueryClientProvider>
+			<html lang="en" suppressHydrationWarning>
+				<head />
+				<body
+					className={clsx(
+						"min-h-screen bg-background font-sans antialiased",
+						fontSans.variable
+					)}
+				>
+					<Providers themeProps={{ attribute: "class", defaultTheme: "dark",children }}>
+						<Craft.Section>
+							<Craft.Container>
+								<div className="flex flex-col h-screen">
+									<Navbar />
+									<Divider className="my-4" />
+									{children}
+									<Divider className="my-4" />
+									<Footer/>
+								</div>
+							</Craft.Container>
+						</Craft.Section>
+					</Providers>
+				</body>
+			</html>
+		</TankStackQueryClientProvider>
 	);
 }
