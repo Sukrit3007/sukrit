@@ -1,40 +1,42 @@
-# Next.js & NextUI Template
+# Sukrit's Portfolio Website
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+A modern, responsive personal portfolio website built with Next.js 13 and NextUI.
 
-## Technologies Used
+## 🌐 Live Demo
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+[View Portfolio](https://sukrits.webflow.io)
 
-## How to Use
+## ✨ Features
 
+- **Modern Design** - Clean, professional UI with smooth animations
+- **Dark/Light Mode** - Theme switching support with next-themes
+- **Responsive** - Fully responsive design for all devices
+- **Fast Performance** - Built with Next.js 13 App Router for optimal performance
+- **Type Safe** - Written in TypeScript for better developer experience
 
-### Use the template with create-next-app
+## 🛠️ Tech Stack
 
-To create a new project based on this template using `create-next-app`, run the following command:
+- **Framework:** Next.js 13 (App Router)
+- **UI Library:** NextUI v2
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Language:** TypeScript
+
+## 🚀 Getting Started
 
 ```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
-
-### Install dependencies
-
-```bash
+# Install dependencies
 npm install
-```
 
-### Run the development server
-
-```bash
+# Run development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-## License
+Open [http://localhost:3000](http://localhost:3000) to view in browser.
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+## 📝 License
+
+MIT License
